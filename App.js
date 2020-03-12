@@ -10,14 +10,16 @@ import Contact from "./src/views/contact";
 import { StyleSheet } from "react-native";
 import * as variables from "./src/variables/color";
 import Header from "./src/components/Layout/Header";
+import Landing from "./src/views/Landing";
 
 const styles = StyleSheet.create({
   root: {
-    fontFamily: "Montserrat_regular"
+    marginHorizontal: 30
   },
   header: {
     height: 80,
-    borderBottomWidth: 0
+    borderBottomWidth: 0,
+    marginBottom: 55,
   }
 });
 
@@ -51,16 +53,22 @@ export default function App() {
   }
 
   return (
-    <Container>
+    <Container style={styles.root}>
       <Router>
         <Stack key="root">
           <Scene
+            key="landing"
+            component={Landing}
+            navigationBarStyle={styles.header}
+            renderTitle={<Header />}
+          />
+          {/* <Scene
             key="home"
             component={Home}
             navigationBarStyle={styles.header}
             renderTitle={<Header />}
           />
-          <Scene key="contact" component={Contact} title="contact" />
+          <Scene key="contact" component={Contact} title="contact" /> */}
         </Stack>
       </Router>
     </Container>

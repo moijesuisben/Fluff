@@ -9,13 +9,20 @@ const styles = StyleSheet.create({
     backgroundColor: variables.rajah,
     width: "100%",
     justifyContent: 'center',
+    height: 50
+  },
+  buttonText: {
+    textTransform: "uppercase",
+    fontFamily: 'Montserrat_bold',
+    fontSize: 12,
+    shadowColor: variables.athensGray
   }
 });
 
 export default function PrimaryBtn({ PrimaryBtnText, onPressPrimaryBtn }) {
   return (
     <Button style={styles.button} onPress={onPressPrimaryBtn}>
-      <Text>{PrimaryBtnText}</Text>
+      <Text style={styles.buttonText}>{PrimaryBtnText}</Text>
     </Button>
   );
 }

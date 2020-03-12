@@ -1,6 +1,6 @@
 // COLOR
-export const colorBlue = 'green';
-export const colorRed = 'red';
+export const colorBlue = 'green'; // TODO Remove
+export const colorRed = 'red'; // TODO Remove
 
 export const anakiwa = '#9edaff';
 export const bermuda = '#6BE2AB';

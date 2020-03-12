@@ -8,10 +8,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center"
   },
-  logoHeader: {
-    height: 60,
-    width: 103
-  },
   textHeader: {
     fontFamily: "Routen",
     fontSize: 60,
