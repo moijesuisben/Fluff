@@ -9,13 +9,21 @@ const styles = StyleSheet.create({
     backgroundColor: variables.rajah,
     width: "100%",
     justifyContent: 'center',
-    height: 50
+    height: 50,
+    borderRadius: 6,
+    shadowColor: variables.athensGray,
+     shadowOpacity: 1,
+   /*  elevation: 5,
+    shadowRadius: 6, */
+    shadowOffset: {
+      width: 0,
+      height: 0,
+    },
   },
   buttonText: {
     textTransform: "uppercase",
     fontFamily: 'Montserrat_bold',
     fontSize: 12,
-    shadowColor: variables.athensGray
   }
 });
 

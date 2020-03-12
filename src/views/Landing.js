@@ -2,12 +2,13 @@ import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import * as variables from "../variables/color";
 import PrimaryBtn from "../components/Button/PrimaryBtn";
+import { Actions } from "react-native-router-flux";
 
 const styles = StyleSheet.create({
   root: {},
   box: {
-      height: '90%',
-      justifyContent: "space-between",
+    height: "90%",
+    justifyContent: "space-between"
   },
   title: {
     fontSize: 50,
@@ -26,7 +27,7 @@ const styles = StyleSheet.create({
 });
 
 const onPressBtn = () => {
-  Actions["contact"]();
+  Actions["home"]();
 };
 
 export default function Landing() {
@@ -39,7 +40,7 @@ export default function Landing() {
           relation votre animal de compagnie et leur pet-sitter.
         </Text>
       </View>
-      <PrimaryBtn PrimaryBtnText="hola" onPressPrimaryBtn={onPressBtn} />
+      <PrimaryBtn PrimaryBtnText="démarrer" onPressPrimaryBtn={onPressBtn} />
     </View>
   );
 }

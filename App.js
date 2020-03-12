@@ -5,12 +5,11 @@ import { AppLoading } from "expo";
 import { Container, Text } from "native-base";
 import * as Font from "expo-font";
 import { Ionicons } from "@expo/vector-icons";
-import Home from "./src/views/home";
-import Contact from "./src/views/contact";
 import { StyleSheet } from "react-native";
 import * as variables from "./src/variables/color";
 import Header from "./src/components/Layout/Header";
 import Landing from "./src/views/Landing";
+import Home from "./src/views/Home";
 
 const styles = StyleSheet.create({
   root: {
@@ -59,6 +58,12 @@ export default function App() {
           <Scene
             key="landing"
             component={Landing}
+            navigationBarStyle={styles.header}
+            renderTitle={<Header />}
+          />
+          <Scene
+            key="home"
+            component={Home}
             navigationBarStyle={styles.header}
             renderTitle={<Header />}
           />
