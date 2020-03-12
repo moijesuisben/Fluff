@@ -8,9 +8,17 @@ import { Ionicons } from "@expo/vector-icons";
 import Home from "./src/views/home";
 import Contact from "./src/views/contact";
 import { StyleSheet } from "react-native";
+import * as variables from "./src/variables/color";
+import Header from "./src/components/Layout/Header";
 
 const styles = StyleSheet.create({
-  root: {}
+  root: {
+    fontFamily: "Montserrat_regular"
+  },
+  header: {
+    height: 80,
+    borderBottomWidth: 0
+  }
 });
 
 export default function App() {
@@ -21,6 +29,14 @@ export default function App() {
       await Font.loadAsync({
         Roboto: require("native-base/Fonts/Roboto.ttf"),
         Roboto_medium: require("native-base/Fonts/Roboto_medium.ttf"),
+
+        Routen: require("./assets/font/Routen-Regular-export/routen.ttf"),
+
+        Montserrat_regular: require("./assets/font/Montserrat/Montserrat-Regular.ttf"),
+        Montserrat_medium: require("./assets/font/Montserrat/Montserrat-Medium.ttf"),
+        Montserrat_semiBold: require("./assets/font/Montserrat/Montserrat-SemiBold.ttf"),
+        Montserrat_bold: require("./assets/font/Montserrat/Montserrat-Bold.ttf"),
+
         ...Ionicons.font
       });
 
@@ -38,7 +54,12 @@ export default function App() {
     <Container>
       <Router>
         <Stack key="root">
-          <Scene key="home" component={Home} title="Home" />
+          <Scene
+            key="home"
+            component={Home}
+            navigationBarStyle={styles.header}
+            renderTitle={<Header />}
+          />
           <Scene key="contact" component={Contact} title="contact" />
         </Stack>
       </Router>
