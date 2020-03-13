@@ -12,13 +12,13 @@ import Landing from "./src/views/Landing";
 import Home from "./src/views/Home";
 
 const styles = StyleSheet.create({
-  root: {
+  /* root: {
     marginHorizontal: 30
-  },
+  }, */
   header: {
     height: 80,
     borderBottomWidth: 0,
-    marginBottom: 55,
+    marginBottom: 55
   }
 });
 
@@ -52,7 +52,9 @@ export default function App() {
   }
 
   return (
-    <Container style={styles.root}>
+    <Container
+    //style={styles.root}
+    >
       <Router>
         <Stack key="root">
           <Scene
@@ -66,6 +68,8 @@ export default function App() {
             component={Home}
             navigationBarStyle={styles.header}
             renderTitle={<Header />}
+            left={() => null}
+            gesturesEnabled={false}
           />
           {/* <Scene
             key="home"

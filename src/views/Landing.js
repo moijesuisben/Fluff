@@ -5,7 +5,9 @@ import PrimaryBtn from "../components/Button/PrimaryBtn";
 import { Actions } from "react-native-router-flux";
 
 const styles = StyleSheet.create({
-  root: {},
+  root: {
+    marginHorizontal: 30
+  },
   box: {
     height: "90%",
     justifyContent: "space-between"
@@ -32,7 +34,7 @@ const onPressBtn = () => {
 
 export default function Landing() {
   return (
-    <View style={styles.box}>
+    <View style={[styles.box, styles.root]}>
       <View>
         <Text style={styles.title}>Bienvenue</Text>
         <Text style={styles.description}>

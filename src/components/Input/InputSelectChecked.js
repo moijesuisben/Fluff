@@ -1,16 +1,23 @@
-import React from 'react';
-import { StyleSheet } from 'react-native';
-import { Button, Text } from 'native-base';
+import React from "react";
+import { StyleSheet } from "react-native";
+import { Button, Text } from "native-base";
+import * as variables from "../../variables/color";
 
 const styles = StyleSheet.create({
-    root:{},
+  button: {
+    backgroundColor: variables.peachOrange
+  },
+  buttonText: {
+    fontFamily: "Montserrat_medium",
+    fontSize: 15,
+    color: variables.white
+  }
 });
 
-export default function InputSelectChecked({TextInput}) {
-
-    return (
-        <Button rounded>
-            <Text>{TextInput}</Text>
-        </Button>
-    );
+export default function InputSelectChecked({ TextInput }) {
+  return (
+    <Button rounded style={styles.button}>
+      <Text style={styles.buttonText}>{TextInput}</Text>
+    </Button>
+  );
 }
