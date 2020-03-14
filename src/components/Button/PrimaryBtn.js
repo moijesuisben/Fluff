@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Text } from "native-base";
 import { StyleSheet } from "react-native";
-import * as variables from "../../variables/color";
+import * as variables from "../../variables";
 
 const styles = StyleSheet.create({
   root: {},

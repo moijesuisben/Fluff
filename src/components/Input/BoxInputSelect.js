@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, View, Text, Image } from "react-native";
-import * as variables from "../../variables/color";
+import * as variables from "../../variables";
 
 const styles = StyleSheet.create({
   box: {
@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingTop: 32,
     paddingBottom: 18,
-    flex:1
+    flex: 1,
   },
   icon: {
     height: 50,

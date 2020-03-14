@@ -1,7 +1,4 @@
 // COLOR
-export const colorBlue = 'green'; // TODO Remove
-export const colorRed = 'red'; // TODO Remove
-
 export const anakiwa = '#9edaff';
 export const bermuda = '#6BE2AB';
 export const rajah = '#f8ae7f';
@@ -11,6 +8,11 @@ export const osloGray = '#868e96';
 export const trout = '#495057';
 export const athensGray = '#e9ecef';
 export const white= '#f8f9fa';
+
+
+// MARGIN
+
+export const marginRoot = 30;
 
 
 

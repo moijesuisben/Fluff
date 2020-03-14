@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, Text } from "react-native";
-import * as variables from "../../variables/color";
+import * as variables from "../../variables";
 
 const styles = StyleSheet.create({
   root: {

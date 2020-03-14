@@ -1,8 +1,9 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
-import * as variables from "../variables/color";
+import * as variables from "../variables";
 import PrimaryBtn from "../components/Button/PrimaryBtn";
 import { Actions } from "react-native-router-flux";
+import SecondaryBtn from "../components/Button/SecondaryBtn";
 
 const styles = StyleSheet.create({
   root: {

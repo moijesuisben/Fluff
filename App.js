@@ -6,7 +6,7 @@ import { Container, Text } from "native-base";
 import * as Font from "expo-font";
 import { Ionicons } from "@expo/vector-icons";
 import { StyleSheet } from "react-native";
-import * as variables from "./src/variables/color";
+import * as variables from "./src/variables";
 import Header from "./src/components/Layout/Header";
 import Landing from "./src/views/Landing";
 import Home from "./src/views/Home";
