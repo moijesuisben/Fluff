@@ -22,6 +22,9 @@ const styles = StyleSheet.create({
   serviceType: {
     marginBottom: 77
   },
+  nextButton: {
+    alignItems: "center"
+  }
 });
 
 export default function Home() {
@@ -39,7 +42,7 @@ export default function Home() {
     }
   };
   return (
-    <View style={styles.nextButton}>
+    <View>
       <View style={styles.animalType}>
         <InputHeading inputHeading="Je cherche pour mon" />
         <View style={[styles.input, styles.lineSpaceInput, styles.root]}>
@@ -84,7 +87,9 @@ export default function Home() {
           />
         </View>
       </View>
-      <SecondaryBtn text="hohpojo" />
+      <View style={styles.nextButton}>
+        <SecondaryBtn text="suivant" />
+      </View>
     </View>
   );
 }

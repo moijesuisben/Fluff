@@ -6,7 +6,6 @@ import * as variables from "../../variables";
 const styles = StyleSheet.create({
   root: {},
   button: {
-    // alignSelf: "flex-start"
     justifyContent: "center"
   },
   buttonText: {
@@ -23,10 +22,7 @@ const styles = StyleSheet.create({
 
 export default function SecondaryBtn({ text }) {
   return (
-    <Button
-      transparent // TODO find solution for no width 100%
-      style={styles.button}
-    >
+    <Button transparent style={styles.button}>
       <Text style={styles.buttonText}>{text}</Text>
     </Button>
   );
