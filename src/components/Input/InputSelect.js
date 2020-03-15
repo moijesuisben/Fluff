@@ -14,10 +14,10 @@ const styles = StyleSheet.create({
   }
 });
 
-export default function InputSelectChecked({ TextInput, onPress }) {
+export default function InputSelectChecked({ text, onPress }) {
   return (
     <Button rounded style={styles.button} onPress={onPress}>
-      <Text style={styles.buttonText}>{TextInput}</Text>
+      <Text style={styles.buttonText}>{text}</Text>
     </Button>
   );
 }

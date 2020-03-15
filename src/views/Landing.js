@@ -43,7 +43,7 @@ export default function Landing() {
           relation votre animal de compagnie et leur pet-sitter.
         </Text>
       </View>
-      <PrimaryBtn PrimaryBtnText="démarrer" onPressPrimaryBtn={onPressBtn} />
+      <PrimaryBtn text="démarrer" onPress={onPressBtn} />
     </View>
   );
 }

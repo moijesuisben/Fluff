@@ -15,6 +15,6 @@ const styles = StyleSheet.create({
   }
 });
 
-export default function InputHeading({ inputHeading }) {
-  return <Text style={[styles.text, styles.root]}>{inputHeading}</Text>;
+export default function InputHeading({ text }) {
+  return <Text style={[styles.text, styles.root]}>{text}</Text>;
 }

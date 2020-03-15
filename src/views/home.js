@@ -44,16 +44,16 @@ export default function Home() {
   return (
     <View>
       <View style={styles.animalType}>
-        <InputHeading inputHeading="Je cherche pour mon" />
+        <InputHeading text="Je cherche pour mon" />
         <View style={[styles.input, styles.lineSpaceInput, styles.root]}>
-          <InputSelect TextInput="Oiseau" onPress={changeColor} />
-          <InputSelect TextInput="Poisson" />
-          <InputSelect TextInput="Chien" />
+          <InputSelect text="Oiseau" onPress={changeColor} />
+          <InputSelect text="Poisson" />
+          <InputSelect text="Chien" />
         </View>
         <View style={[styles.input, styles.root]}>
-          <InputSelect TextInput="Reptile" />
-          <InputSelect TextInput="Rongeur" />
-          <InputSelect TextInput="Chat" />
+          <InputSelect text="Reptile" />
+          <InputSelect text="Rongeur" />
+          <InputSelect text="Chat" />
         </View>
       </View>
 
@@ -90,6 +90,7 @@ export default function Home() {
       <View style={styles.nextButton}>
         <SecondaryBtn text="suivant" />
       </View>
+      {/* // TODO Add and connect page info blob */}
     </View>
   );
 }
