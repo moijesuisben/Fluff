@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import { StyleSheet, View } from "react-native";
-import InputHeading from "../components/Text/InputHeading";
-import InputSelect from "../components/Input/InputSelect";
-import BoxInputSelect from "../components/Input/BoxInputSelect";
-import SecondaryBtn from "../components/Button/SecondaryBtn";
+import InputHeading from "../../components/Text/InputHeading";
+import InputSelect from "../../components/Input/InputSelect";
+import BoxInputSelect from "../../components/Input/BoxInputSelect";
+import SecondaryBtn from "../../components/Button/SecondaryBtn";
+import { Actions } from "react-native-router-flux";
+import * as variables from "../../variables";
 
 const styles = StyleSheet.create({
   root: {
-    marginHorizontal: 30
+    marginHorizontal: variables.marginRoot
   },
   animalType: {
     marginBottom: 27
@@ -27,7 +29,11 @@ const styles = StyleSheet.create({
   }
 });
 
-export default function Home() {
+const onPressBtn = () => {
+  Actions["form2"]();
+};
+
+export default function Form1() {
   const [animalTypeCheck, setAnimalTypeCheck] = React.useState(true);
 
   const changeColor = () => {
@@ -61,34 +67,34 @@ export default function Home() {
         <View flexDirection="row">
           <BoxInputSelect
             text="hébergement"
-            media={require("../../assets/logo/icon.png")}
+            media={require("../../../assets/logo/icon.png")}
           />
           <BoxInputSelect
             text="garde à domicile"
-            media={require("../../assets/logo/icon.png")}
+            media={require("../../../assets/logo/icon.png")}
           />
           <BoxInputSelect
             text="visite à domicile"
-            media={require("../../assets/logo/icon.png")}
+            media={require("../../../assets/logo/icon.png")}
           />
         </View>
         <View flexDirection="row">
           <BoxInputSelect
             text="garderie"
-            media={require("../../assets/logo/icon.png")}
+            media={require("../../../assets/logo/icon.png")}
           />
           <BoxInputSelect
             text="promenade"
-            media={require("../../assets/logo/icon.png")}
+            media={require("../../../assets/logo/icon.png")}
           />
           <BoxInputSelect
             text="sortie"
-            media={require("../../assets/logo/icon.png")}
+            media={require("../../../assets/logo/icon.png")}
           />
         </View>
       </View>
       <View style={styles.nextButton}>
-        <SecondaryBtn text="suivant" />
+        <SecondaryBtn text="suivant" onPress={onPressBtn} />
       </View>
       {/* // TODO Add and connect page info blob */}
     </View>

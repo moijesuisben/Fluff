@@ -2,14 +2,18 @@ import React from "react";
 import { Router, Stack, Scene } from "react-native-router-flux";
 
 import { AppLoading } from "expo";
-import { Container, Text } from "native-base";
+import { Container } from "native-base";
 import * as Font from "expo-font";
+import * as variables from "./src/variables";
 import { Ionicons } from "@expo/vector-icons";
 import { StyleSheet } from "react-native";
-import * as variables from "./src/variables";
 import Header from "./src/components/Layout/Header";
 import Landing from "./src/views/Landing";
-import Home from "./src/views/Home";
+import Form1 from "./src/views/Form/Form1";
+import Form2 from "./src/views/Form/Form2";
+import Form3 from "./src/views/Form/Form3";
+import Form4 from "./src/views/Form/Form4";
+import Form5 from "./src/views/Form/Form5";
 
 const styles = StyleSheet.create({
   /* root: {
@@ -18,7 +22,8 @@ const styles = StyleSheet.create({
   header: {
     height: 80,
     borderBottomWidth: 0,
-    marginBottom: 55
+    marginBottom: 55,
+    elevation: 0,
   }
 });
 
@@ -64,12 +69,41 @@ export default function App() {
             renderTitle={<Header />}
           />
           <Scene
-            key="home"
-            component={Home}
+            key="form1"
+            component={Form1}
             navigationBarStyle={styles.header}
             renderTitle={<Header />}
             left={() => null}
             gesturesEnabled={false}
+          />
+          <Scene
+            key="form2"
+            component={Form2}
+            navigationBarStyle={styles.header}
+            renderTitle={<Header />}
+            backTitle=" "
+            backButtonTintColor={variables.hitGray}
+          />
+          <Scene
+            key="form3"
+            component={Form3}
+            navigationBarStyle={styles.header}
+            renderTitle={<Header />}
+            backTitle=" "
+          />
+          <Scene
+            key="form4"
+            component={Form4}
+            navigationBarStyle={styles.header}
+            renderTitle={<Header />}
+            backTitle=" "
+          />
+          <Scene
+            key="form5"
+            component={Form5}
+            navigationBarStyle={styles.header}
+            renderTitle={<Header />}
+            backTitle=" "
           />
           {/* <Scene
             key="home"

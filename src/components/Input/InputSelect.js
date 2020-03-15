@@ -5,12 +5,14 @@ import * as variables from "../../variables";
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: "transparent"
+    backgroundColor: "transparent",
+    elevation: 0,
   },
   buttonText: {
     fontFamily: "Montserrat_medium",
+    textTransform: "capitalize",
     fontSize: 15,
-    color: variables.trout
+    color: variables.trout,
   }
 });
 

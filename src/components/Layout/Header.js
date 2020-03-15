@@ -6,7 +6,10 @@ const styles = StyleSheet.create({
   root: {},
   header: {
     flexDirection: "row",
-    alignItems: "center"
+    alignItems: "center",
+    justifyContent: "center",
+    width: '100%',
+    position: 'absolute',
   },
   textHeader: {
     fontFamily: "Routen",
