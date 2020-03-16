@@ -83,6 +83,7 @@ export default function App() {
             renderTitle={<Header />}
             backTitle=" "
             backButtonTintColor={variables.hitGray}
+            gesturesEnabled={false}
           />
           <Scene
             key="form3"
@@ -90,6 +91,8 @@ export default function App() {
             navigationBarStyle={styles.header}
             renderTitle={<Header />}
             backTitle=" "
+            backButtonTintColor={variables.hitGray}
+            gesturesEnabled={false}
           />
           <Scene
             key="form4"
@@ -97,6 +100,8 @@ export default function App() {
             navigationBarStyle={styles.header}
             renderTitle={<Header />}
             backTitle=" "
+            backButtonTintColor={variables.hitGray}
+            gesturesEnabled={false}
           />
           <Scene
             key="form5"
@@ -104,6 +109,8 @@ export default function App() {
             navigationBarStyle={styles.header}
             renderTitle={<Header />}
             backTitle=" "
+            backButtonTintColor={variables.hitGray}
+            gesturesEnabled={false}
           />
           {/* <Scene
             key="home"
