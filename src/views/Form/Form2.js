@@ -24,7 +24,12 @@ const styles = StyleSheet.create({
   },
   nextButton: {
     alignItems: "center"
-  }
+  },
+  infoRadiusTitle: {
+    fontFamily: "Montserrat_medium",
+    fontSize: 12,
+    color: variables.osloGray
+  },
 });
 
 const onPressBtn = () => {
@@ -44,7 +49,7 @@ export default function Form2() {
         <InputText placeholder="code postal ou adresse" />
       </View>
       <View style={styles.radius}>
-        <InputHeading text="dans quel rayon" button={sliderOnValue + " km"} />
+        <InputHeading text="dans quel rayon" button={sliderOnValue + " km"} buttonStyleExtra={styles.infoRadiusTitle} />
         <Slider
           values={sliderOnValue}
           sliderLength={355}

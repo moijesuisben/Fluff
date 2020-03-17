@@ -20,10 +20,10 @@ const styles = StyleSheet.create({
   }
 });
 
-export default function SecondaryBtn({ text, onPress }) {
+export default function SecondaryBtn({ text, onPress, TextStyle }) {
   return (
     <Button transparent style={styles.button} onPress={onPress}>
-      <Text style={styles.buttonText}>{text}</Text>
+      <Text style={[styles.buttonText,TextStyle]}>{text}</Text>
     </Button>
   );
 }

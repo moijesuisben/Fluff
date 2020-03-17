@@ -25,11 +25,11 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function InputHeading({ text, button }) {
+export default function InputHeading({ text, button, buttonStyleExtra }) {
   return (
     <View style={styles.root}>
       <Text style={styles.text}>{text}</Text>
-      <Text style={styles.button}>{button}</Text>
+      <Text style={[styles.button, buttonStyleExtra]}>{button}</Text>
     </View>
   );
 }
