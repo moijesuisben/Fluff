@@ -1000,6 +1000,11 @@
     "@types/yargs" "^15.0.0"
     chalk "^3.0.0"
 
+"@ptomasroos/react-native-multi-slider@^2.2.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@ptomasroos/react-native-multi-slider/-/react-native-multi-slider-2.2.0.tgz#b1997f65c925328ed488c74dd46d9a5fc2edd283"
+  integrity sha512-JIlNo64JYTYeipIv+QcRNouBJdklWnQtwGlOCSIK7S4qQY5z6lYLTVnYJtlZoGJgXeSorPz9aRGrzfmE/eULoQ==
+
 "@react-native-community/cli-debugger-ui@^3.0.0":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@react-native-community/cli-debugger-ui/-/cli-debugger-ui-3.0.0.tgz#d01d08d1e5ddc1633d82c7d84d48fff07bd39416"
@@ -2878,7 +2883,7 @@ hoist-non-react-statics@^2.3.1:
   resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-2.5.5.tgz#c5903cf409c0dfd908f388e619d86b9c1174cb47"
   integrity sha512-rqcy4pJo55FTTLWt+bU8ukscqHeE/e9KWvsOW2b/a3afxQZhwkQdT1rPPCJ0rYXdj4vNcasY8zHTH+jF/qStxw==
 
-hoist-non-react-statics@^3.3.2:
+hoist-non-react-statics@^3.3.1, hoist-non-react-statics@^3.3.2:
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-3.3.2.tgz#ece0acaf71d62c2969c2ec59feff42a4b1a85b45"
   integrity sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==
@@ -4561,6 +4566,16 @@ react-lifecycles-compat@^3.0.4:
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
+react-native-calendars@^1.264.0:
+  version "1.264.0"
+  resolved "https://registry.yarnpkg.com/react-native-calendars/-/react-native-calendars-1.264.0.tgz#552cfff1480ab6c860f54e12ec2b82f9b514aae6"
+  integrity sha512-NHNekv1iwHMI+evr8dDLFqCdvnCWGlBxPKO0/bw1+HDy4uukuab//akoOx9/GGl/3+XV6MVTLdda+qjT6pD2Bg==
+  dependencies:
+    hoist-non-react-statics "^3.3.1"
+    lodash "^4.0.0"
+    prop-types "^15.5.10"
+    xdate "^0.8.0"
+
 react-native-drawer@2.5.1:
   version "2.5.1"
   resolved "https://registry.yarnpkg.com/react-native-drawer/-/react-native-drawer-2.5.1.tgz#08b9314184f48c724f1b467f8859797369798654"
@@ -4599,6 +4614,11 @@ react-native-keyboard-aware-scroll-view@0.9.1:
   dependencies:
     prop-types "^15.6.2"
     react-native-iphone-x-helper "^1.0.3"
+
+react-native-maps@0.27.0:
+  version "0.27.0"
+  resolved "https://registry.yarnpkg.com/react-native-maps/-/react-native-maps-0.27.0.tgz#3b62e8dbe03f4a7f855dbff429db3eab5f76959b"
+  integrity sha512-jyvgJQRbbJp79p4DV0F8uM+c71les78ZFMBaOs3GUYZRitOmGx8T1o/0YwYlX3Oi9NOICCSVIyi/a+nujSmhPQ==
 
 react-native-reanimated@~1.4.0:
   version "1.4.0"
@@ -5833,6 +5853,11 @@ xcode@^2.0.0:
   dependencies:
     simple-plist "^1.0.0"
     uuid "^3.3.2"
+
+xdate@^0.8.0:
+  version "0.8.2"
+  resolved "https://registry.yarnpkg.com/xdate/-/xdate-0.8.2.tgz#d7b033c00485d02695baf0044f4eacda3fc961a3"
+  integrity sha1-17AzwASF0CaVuvAET06s2j/JYaM=
 
 xmlbuilder@^9.0.7:
   version "9.0.7"

@@ -6,6 +6,7 @@ import InputText from "../../components/Input/InputText";
 import Slider from "../../components/Input/Slider";
 import SecondaryBtn from "../../components/Button/SecondaryBtn";
 import { Actions } from "react-native-router-flux";
+import MapView from "react-native-maps";
 
 const styles = StyleSheet.create({
   root: {
@@ -18,9 +19,8 @@ const styles = StyleSheet.create({
     marginBottom: 30
   },
   map: {
-    height: 205,
-    backgroundColor: variables.athensGray,
-    marginBottom: 47,
+    height: 204,
+    marginBottom: 47
   },
   nextButton: {
     alignItems: "center"
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     fontFamily: "Montserrat_medium",
     fontSize: 12,
     color: variables.osloGray
-  },
+  }
 });
 
 const onPressBtn = () => {
@@ -49,7 +49,11 @@ export default function Form2() {
         <InputText placeholder="code postal ou adresse" />
       </View>
       <View style={styles.radius}>
-        <InputHeading text="dans quel rayon" button={sliderOnValue + " km"} buttonStyleExtra={styles.infoRadiusTitle} />
+        <InputHeading
+          text="dans quel rayon"
+          button={sliderOnValue + " km"}
+          buttonStyleExtra={styles.infoRadiusTitle}
+        />
         <Slider
           values={sliderOnValue}
           sliderLength={355}
@@ -58,7 +62,15 @@ export default function Form2() {
           onValuesChangeFinish={sliderOnValuesChangeFinish}
         />
       </View>
-      <View style={[styles.map, styles.root]}></View>
+      <MapView
+        style={styles.map}
+        initialRegion={{
+          latitude: 47.2173,
+          longitude: -1.5534,
+          latitudeDelta: 0.0922,
+          longitudeDelta: 0.0421
+        }}
+      />
       <View style={styles.nextButton}>
         <SecondaryBtn text="suivant" onPress={onPressBtn} />
       </View>

@@ -1,14 +1,16 @@
 import React from "react";
 import { Calendar } from "react-native-calendars";
-import { StyleSheet } from "react-native";
 import { LocaleConfig } from "react-native-calendars";
+import { View, Text, StyleSheet } from "react-native";
+import { Icon } from "native-base";
+import { Directions } from "react-native-gesture-handler";
 
 const styles = StyleSheet.create({
   root: {
     // borderWidth: 1
-    shadowColor: '#000',
+    shadowColor: "#000",
     shadowOffset: { width: 0, height: 0 },
-    shadowOpacity: 0.1,
+    shadowOpacity: 0.1
     // shadowRadius: 1,
     // elevation: 1,
   }
@@ -58,6 +60,8 @@ export default function CustomCalendar() {
   };
   LocaleConfig.defaultLocale = "fr";
 
+  const checked = { selected: true, marked: true, selectedColor: "blue" };
+
   return (
     <Calendar
       style={styles.root}
@@ -66,6 +70,7 @@ export default function CustomCalendar() {
       maxDate={"2020-12-31"}
       onDayPress={day => {
         console.log("selected day", day);
+        checked;
       }}
       onDayLongPress={day => {
         console.log("selected day", day);
@@ -74,17 +79,29 @@ export default function CustomCalendar() {
       onMonthChange={month => {
         console.log("month changed", month);
       }}
-      hideArrows={true}
-      renderArrow={direction => <Arrow />}
+      hideArrows={false}
+      // renderArrow={direction => (
+      //   <Icon name='ios-arrow-back' />
+      // )}
+      renderArrow={direction =>
+        <Icon name="ios-arrow-back" />
+      }
       hideExtraDays={true}
-      disableMonthChange={true}
+      disableMonthChange={false}
       //   firstDay={1}
       hideDayNames={false}
       showWeekNumbers={false}
       onPressArrowLeft={substractMonth => substractMonth()}
       onPressArrowRight={addMonth => addMonth()}
-      disableArrowLeft={true}
-      disableArrowRight={true}
+      disableArrowLeft={false}
+      disableArrowRight={false}
+      markedDates={{
+        checked
+        // '2020-03-10': {selected: true, marked: true, selectedColor: 'blue'},
+        // '2020-03-15': {marked: true},
+        // '2020-03-3': {marked: true, dotColor: 'red', activeOpacity: 0},
+        // '2020-03-20': {disabled: true, disableTouchEvent: true}
+      }}
     />
   );
 }
