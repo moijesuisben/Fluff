@@ -1,17 +1,24 @@
 import React from "react";
-import { StyleSheet, View, Text, Image } from "react-native";
+import {
+  StyleSheet,
+  View,
+  Text,
+  Image,
+  TouchableHighlight
+} from "react-native";
 import * as variables from "../../variables";
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1
+  },
   box: {
-    // backgroundColor: variables.athensGray,
-    borderWidth: 1,
-    borderColor: variables.athensGray,
     justifyContent: "center",
     alignItems: "center",
     paddingTop: 32,
     paddingBottom: 18,
-    flex: 1,
+    borderWidth: 1,
+    borderColor: variables.athensGray,
   },
   icon: {
     height: 50,
@@ -25,11 +32,15 @@ const styles = StyleSheet.create({
   }
 });
 
-export default function BoxInputSelect({ text, media }) {
+export default function BoxInputSelect({ text, media, onPress, boxStyle, boxStyleText }) {
   return (
-    <View style={styles.box}>
-      <Image style={styles.icon} source={media} />
-      <Text style={styles.text}>{text}</Text>
+    <View style={styles.container}>
+      <TouchableHighlight onPress={onPress}>
+        <View style={[styles.box, boxStyle]}>
+          <Image style={styles.icon} source={media} />
+          <Text style={[styles.text, boxStyleText]}>{text}</Text>
+        </View>
+      </TouchableHighlight>
     </View>
   );
 }

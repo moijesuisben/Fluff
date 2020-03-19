@@ -9,41 +9,57 @@ import * as variables from "../../variables";
 
 const styles = StyleSheet.create({
   root: {
-    marginHorizontal: variables.marginRoot
+    marginHorizontal: variables.marginRoot,
   },
   animalType: {
-    marginBottom: 27
+    marginBottom: 27,
   },
   input: {
     flexDirection: "row",
-    justifyContent: "space-between"
+    justifyContent: "space-between",
   },
   lineSpaceInput: {
-    marginBottom: 20
+    marginBottom: 20,
   },
   serviceType: {
-    marginBottom: 77
+    marginBottom: 77,
   },
   nextButton: {
-    alignItems: "center"
+    alignItems: "center",
+  },
+  nextButtonEnable: {
+    color: variables.peachOrange,
   },
   animalActive: {
-    backgroundColor: variables.peachOrange
+    backgroundColor: variables.peachOrange,
   },
   animalActiveText: {
-    color: "#fff"
-  }
+    color: "#fff",
+  },
+  boxActive: {
+    backgroundColor: variables.peachOrange,
+  },
+  boxActiveText: {
+    color: 'white',
+  },
 });
-
-const onPressBtn = () => {
-  Actions["form2"]();
-};
 
 export default function Form1() {
   const [animalTypeCheck, setAnimalTypeCheck] = useState(null);
+  const [serviceTypeCheck, setServiceTypeCheck] = useState(null);
 
-  const onButtonPress = type => {
+  const onButtonAnimalPress = type => {
     setAnimalTypeCheck(type);
+  };
+
+  const onButtonServicePress = type => {
+    setServiceTypeCheck(type);
+  };
+
+  const onPressBtn = () => {
+    setAnimalTypeCheck && setServiceTypeCheck &&
+      Actions["form2"]();
+    
   };
 
   return (
@@ -57,7 +73,7 @@ export default function Form1() {
             inputStyleText={
               animalTypeCheck === "Oiseau" && styles.animalActiveText
             }
-            onPress={() => onButtonPress("Oiseau")}
+            onPress={() => onButtonAnimalPress("Oiseau")}
           />
           <InputSelect
             text="Poisson"
@@ -65,7 +81,7 @@ export default function Form1() {
             inputStyleText={
               animalTypeCheck === "Poisson" && styles.animalActiveText
             }
-            onPress={() => onButtonPress("Poisson")}
+            onPress={() => onButtonAnimalPress("Poisson")}
           />
           <InputSelect
             text="Chien"
@@ -73,7 +89,7 @@ export default function Form1() {
             inputStyleText={
               animalTypeCheck === "Chien" && styles.animalActiveText
             }
-            onPress={() => onButtonPress("Chien")}
+            onPress={() => onButtonAnimalPress("Chien")}
           />
         </View>
         <View style={[styles.input, styles.root]}>
@@ -83,7 +99,7 @@ export default function Form1() {
             inputStyleText={
               animalTypeCheck === "Reptile" && styles.animalActiveText
             }
-            onPress={() => onButtonPress("Reptile")}
+            onPress={() => onButtonAnimalPress("Reptile")}
           />
           <InputSelect
             text="Rongeur"
@@ -91,7 +107,7 @@ export default function Form1() {
             inputStyleText={
               animalTypeCheck === "Rongeur" && styles.animalActiveText
             }
-            onPress={() => onButtonPress("Rongeur")}
+            onPress={() => onButtonAnimalPress("Rongeur")}
           />
           <InputSelect
             text="Chat"
@@ -99,7 +115,7 @@ export default function Form1() {
             inputStyleText={
               animalTypeCheck === "Chat" && styles.animalActiveText
             }
-            onPress={() => onButtonPress("Chat")}
+            onPress={() => onButtonAnimalPress("Chat")}
           />
         </View>
       </View>
@@ -109,33 +125,63 @@ export default function Form1() {
           <BoxInputSelect
             text="hébergement"
             media={require("../../../assets/logo/icon.png")}
+            boxStyle={serviceTypeCheck === "hébergement" && styles.boxActive}
+            boxStyleText={
+              serviceTypeCheck === "hébergement" && styles.boxActiveText
+            }
+            onPress={() => onButtonServicePress("hébergement")}
           />
           <BoxInputSelect
             text="garde à domicile"
             media={require("../../../assets/logo/icon.png")}
+            boxStyle={serviceTypeCheck === "garde à domicile" && styles.boxActive}
+            boxStyleText={
+              serviceTypeCheck === "garde à domicile" && styles.boxActiveText
+            }
+            onPress={() => onButtonServicePress("garde à domicile")}
           />
           <BoxInputSelect
             text="visite à domicile"
             media={require("../../../assets/logo/icon.png")}
+            boxStyle={serviceTypeCheck === "visite à domicile" && styles.boxActive}
+            boxStyleText={
+              serviceTypeCheck === "visite à domicile" && styles.boxActiveText
+            }
+            onPress={() => onButtonServicePress("visite à domicile")}
           />
         </View>
         <View flexDirection="row">
           <BoxInputSelect
             text="garderie"
             media={require("../../../assets/logo/icon.png")}
+            boxStyle={serviceTypeCheck === "garderie" && styles.boxActive}
+            boxStyleText={
+              serviceTypeCheck === "garderie" && styles.boxActiveText
+            }
+            onPress={() => onButtonServicePress("garderie")}
           />
           <BoxInputSelect
             text="promenade"
             media={require("../../../assets/logo/icon.png")}
+            boxStyle={serviceTypeCheck === "promenade" && styles.boxActive}
+            boxStyleText={
+              serviceTypeCheck === "promenade" && styles.boxActiveText
+            }
+            onPress={() => onButtonServicePress("promenade")}
           />
           <BoxInputSelect
             text="sortie"
             media={require("../../../assets/logo/icon.png")}
+            boxStyle={serviceTypeCheck === "sortie" && styles.boxActive}
+            boxStyleText={
+              serviceTypeCheck === "sortie" && styles.boxActiveText
+            }
+            onPress={() => onButtonServicePress("sortie")}
           />
         </View>
       </View>
       <View style={styles.nextButton}>
-        <SecondaryBtn text="suivant" onPress={onPressBtn} />
+        <SecondaryBtn text="suivant" TextStyle={animalTypeCheck !== null && serviceTypeCheck !== null && styles.nextButtonEnable} onPress={animalTypeCheck !== null && serviceTypeCheck !== null && onPressBtn} />
       </View>
       {/* // TODO Add and connect page info blob */}
     </View>
