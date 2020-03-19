@@ -26,6 +26,12 @@ const styles = StyleSheet.create({
   },
   nextButton: {
     alignItems: "center"
+  },
+  animalActive: {
+    backgroundColor: variables.peachOrange
+  },
+  animalActiveText: {
+    color: "#fff"
   }
 });
 
@@ -34,32 +40,67 @@ const onPressBtn = () => {
 };
 
 export default function Form1() {
-  const [animalTypeCheck, setAnimalTypeCheck] = React.useState(true);
+  const [animalTypeCheck, setAnimalTypeCheck] = useState(null);
 
-  const changeColor = () => {
-    if (animalTypeCheck) {
-      style = {
-        backgroundColor: "red"
-      };
-    } else {
-      style = {
-        backgroundColor: "transparent"
-      };
-    }
+  const onButtonPress = type => {
+    setAnimalTypeCheck(type);
   };
+
   return (
     <View>
       <View style={styles.animalType}>
         <InputHeading text="Je cherche pour mon" />
         <View style={[styles.input, styles.lineSpaceInput, styles.root]}>
-          <InputSelect text="Oiseau" onPress={changeColor} />
-          <InputSelect text="Poisson" />
-          <InputSelect text="Chien" />
+          <InputSelect
+            text="Oiseau"
+            inputStyle={animalTypeCheck === "Oiseau" && styles.animalActive}
+            inputStyleText={
+              animalTypeCheck === "Oiseau" && styles.animalActiveText
+            }
+            onPress={() => onButtonPress("Oiseau")}
+          />
+          <InputSelect
+            text="Poisson"
+            inputStyle={animalTypeCheck === "Poisson" && styles.animalActive}
+            inputStyleText={
+              animalTypeCheck === "Poisson" && styles.animalActiveText
+            }
+            onPress={() => onButtonPress("Poisson")}
+          />
+          <InputSelect
+            text="Chien"
+            inputStyle={animalTypeCheck === "Chien" && styles.animalActive}
+            inputStyleText={
+              animalTypeCheck === "Chien" && styles.animalActiveText
+            }
+            onPress={() => onButtonPress("Chien")}
+          />
         </View>
         <View style={[styles.input, styles.root]}>
-          <InputSelect text="Reptile" />
-          <InputSelect text="Rongeur" />
-          <InputSelect text="Chat" />
+          <InputSelect
+            text="Reptile"
+            inputStyle={animalTypeCheck === "Reptile" && styles.animalActive}
+            inputStyleText={
+              animalTypeCheck === "Reptile" && styles.animalActiveText
+            }
+            onPress={() => onButtonPress("Reptile")}
+          />
+          <InputSelect
+            text="Rongeur"
+            inputStyle={animalTypeCheck === "Rongeur" && styles.animalActive}
+            inputStyleText={
+              animalTypeCheck === "Rongeur" && styles.animalActiveText
+            }
+            onPress={() => onButtonPress("Rongeur")}
+          />
+          <InputSelect
+            text="Chat"
+            inputStyle={animalTypeCheck === "Chat" && styles.animalActive}
+            inputStyleText={
+              animalTypeCheck === "Chat" && styles.animalActiveText
+            }
+            onPress={() => onButtonPress("Chat")}
+          />
         </View>
       </View>
 
