@@ -7,6 +7,7 @@ import Slider from "../../components/Input/Slider";
 import SecondaryBtn from "../../components/Button/SecondaryBtn";
 import { Actions } from "react-native-router-flux";
 import MapView from "react-native-maps";
+import { State } from "react-native-gesture-handler";
 
 const styles = StyleSheet.create({
   root: {
@@ -29,24 +30,38 @@ const styles = StyleSheet.create({
     fontFamily: "Montserrat_medium",
     fontSize: 12,
     color: variables.osloGray
+  },
+  nextButtonEnable: {
+    color: variables.peachOrange
   }
 });
-
-const onPressBtn = () => {
-  Actions["form3"]();
-};
 
 export default function Form2() {
   const [sliderOnChanging, setSliderOnChanging] = React.useState(false);
   const [sliderOnValue, setSliderOnValue] = React.useState([5]);
+  const [textInput, setTextInput] = React.useState("");
   const sliderOnValuesChangeStart = () => setSliderOnChanging(true);
   const sliderOnValuesChange = values => setSliderOnValue(values);
   const sliderOnValuesChangeFinish = () => setSliderOnChanging(false);
+
+  const onPressBtn = () => {
+    Actions["form3"]();
+  };
+
+  const inputValue = e => {
+    setTextInput(value);
+  };
+  console.log(textInput, "textInput");
+
   return (
     <View>
       <View style={styles.location}>
         <InputHeading text="ma localisation" button="me localiser" />
-        <InputText placeholder="code postal ou adresse" />
+        <InputText
+          placeholder="code postal ou adresse"
+          onChangeText={text => setTextInput(text)}
+          value={textInput}
+        />
       </View>
       <View style={styles.radius}>
         <InputHeading
@@ -72,7 +87,12 @@ export default function Form2() {
         }}
       />
       <View style={styles.nextButton}>
-        <SecondaryBtn text="suivant" onPress={onPressBtn} />
+        <SecondaryBtn
+          disabled={textInput === ""}
+          text="suivant"
+          onPress={onPressBtn}
+          TextStyle={textInput !== "" && styles.nextButtonEnable}
+        />
       </View>
     </View>
   );

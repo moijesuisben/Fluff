@@ -84,7 +84,7 @@ export default function CustomCalendar() {
       //   <Icon name='ios-arrow-back' />
       // )}
       renderArrow={direction =>
-        <Icon name="ios-arrow-back" />
+        <Icon name={direction === 'left' ? "ios-arrow-back" : "ios-arrow-forward"} />
       }
       hideExtraDays={true}
       disableMonthChange={false}

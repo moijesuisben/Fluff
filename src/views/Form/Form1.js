@@ -9,39 +9,39 @@ import * as variables from "../../variables";
 
 const styles = StyleSheet.create({
   root: {
-    marginHorizontal: variables.marginRoot,
+    marginHorizontal: variables.marginRoot
   },
   animalType: {
-    marginBottom: 27,
+    marginBottom: 27
   },
   input: {
     flexDirection: "row",
-    justifyContent: "space-between",
+    justifyContent: "space-between"
   },
   lineSpaceInput: {
-    marginBottom: 20,
+    marginBottom: 20
   },
   serviceType: {
-    marginBottom: 77,
+    marginBottom: 77
   },
   nextButton: {
-    alignItems: "center",
+    alignItems: "center"
   },
   nextButtonEnable: {
-    color: variables.peachOrange,
+    color: variables.peachOrange
   },
   animalActive: {
-    backgroundColor: variables.peachOrange,
+    backgroundColor: variables.peachOrange
   },
   animalActiveText: {
-    color: "#fff",
+    color: "#fff"
   },
   boxActive: {
-    backgroundColor: variables.peachOrange,
+    backgroundColor: variables.peachOrange
   },
   boxActiveText: {
-    color: 'white',
-  },
+    color: "white"
+  }
 });
 
 export default function Form1() {
@@ -57,9 +57,7 @@ export default function Form1() {
   };
 
   const onPressBtn = () => {
-    setAnimalTypeCheck && setServiceTypeCheck &&
-      Actions["form2"]();
-    
+    setAnimalTypeCheck && setServiceTypeCheck && Actions["form2"]();
   };
 
   return (
@@ -134,7 +132,9 @@ export default function Form1() {
           <BoxInputSelect
             text="garde à domicile"
             media={require("../../../assets/logo/icon.png")}
-            boxStyle={serviceTypeCheck === "garde à domicile" && styles.boxActive}
+            boxStyle={
+              serviceTypeCheck === "garde à domicile" && styles.boxActive
+            }
             boxStyleText={
               serviceTypeCheck === "garde à domicile" && styles.boxActiveText
             }
@@ -143,7 +143,9 @@ export default function Form1() {
           <BoxInputSelect
             text="visite à domicile"
             media={require("../../../assets/logo/icon.png")}
-            boxStyle={serviceTypeCheck === "visite à domicile" && styles.boxActive}
+            boxStyle={
+              serviceTypeCheck === "visite à domicile" && styles.boxActive
+            }
             boxStyleText={
               serviceTypeCheck === "visite à domicile" && styles.boxActiveText
             }
@@ -173,15 +175,22 @@ export default function Form1() {
             text="sortie"
             media={require("../../../assets/logo/icon.png")}
             boxStyle={serviceTypeCheck === "sortie" && styles.boxActive}
-            boxStyleText={
-              serviceTypeCheck === "sortie" && styles.boxActiveText
-            }
+            boxStyleText={serviceTypeCheck === "sortie" && styles.boxActiveText}
             onPress={() => onButtonServicePress("sortie")}
           />
         </View>
       </View>
       <View style={styles.nextButton}>
-        <SecondaryBtn text="suivant" TextStyle={animalTypeCheck !== null && serviceTypeCheck !== null && styles.nextButtonEnable} onPress={animalTypeCheck !== null && serviceTypeCheck !== null && onPressBtn} />
+        <SecondaryBtn
+          disabled={animalTypeCheck === null || serviceTypeCheck === null}
+          text="suivant"
+          TextStyle={
+            animalTypeCheck !== null &&
+            serviceTypeCheck !== null &&
+            styles.nextButtonEnable
+          }
+          onPress={onPressBtn}
+        />
       </View>
       {/* // TODO Add and connect page info blob */}
     </View>

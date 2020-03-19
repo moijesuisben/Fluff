@@ -6,7 +6,7 @@ import * as variables from "../../variables";
 const styles = StyleSheet.create({
   root: {},
   button: {
-    backgroundColor: variables.rajah,
+    backgroundColor: variables.peachOrange,
     width: "100%",
     justifyContent: 'center',
     height: 50,

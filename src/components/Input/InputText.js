@@ -7,20 +7,25 @@ import * as variables from "../../variables";
 const styles = StyleSheet.create({
   root: {
     marginStart: 10,
-    marginEnd: 30,
+    marginEnd: 30
   },
   input: {
-    fontFamily: 'Montserrat_regular',
+    fontFamily: "Montserrat_regular",
     fontSize: 12,
-    color: variables.trout,
-  },
+    color: variables.trout
+  }
 });
 
-export default function InputText({ placeholder }) {
+export default function InputText({ placeholder, onChangeText, value }) {
   return (
     <Form style={styles.root}>
       <Item>
-        <Input placeholder={placeholder} style={styles.input} />
+        <Input
+          placeholder={placeholder}
+          style={styles.input}
+          onChangeText={onChangeText}
+          value={value}
+        />
       </Item>
     </Form>
   );
