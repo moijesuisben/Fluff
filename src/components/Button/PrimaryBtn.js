@@ -27,10 +27,10 @@ const styles = StyleSheet.create({
   }
 });
 
-export default function PrimaryBtn({ text, onPress }) {
+export default function PrimaryBtn({ text, onPress, buttonStyle, buttonTextStyle }) {
   return (
-    <Button style={styles.button} onPress={onPress}>
-      <Text style={styles.buttonText}>{text}</Text>
+    <Button style={[styles.button,buttonStyle]} onPress={onPress}>
+      <Text style={[styles.buttonText, buttonTextStyle]}>{text}</Text>
     </Button>
   );
 }
