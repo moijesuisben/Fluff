@@ -14,6 +14,7 @@ import Form2 from "./src/views/Form/Form2";
 import Form3 from "./src/views/Form/Form3";
 import Form4 from "./src/views/Form/Form4";
 import Form5 from "./src/views/Form/Form5";
+import Result from "./src/views/Result";
 
 const styles = StyleSheet.create({
   /* root: {
@@ -106,6 +107,15 @@ export default function App() {
           <Scene
             key="form5"
             component={Form5}
+            navigationBarStyle={styles.header}
+            renderTitle={<Header />}
+            backTitle=" "
+            backButtonTintColor={variables.hitGray}
+            gesturesEnabled={false}
+          />
+          <Scene
+            key="result"
+            component={Result}
             navigationBarStyle={styles.header}
             renderTitle={<Header />}
             backTitle=" "

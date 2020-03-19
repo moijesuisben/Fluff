@@ -2,6 +2,7 @@ import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import * as variables from "../../variables";
 import PrimaryBtn from "../../components/Button/PrimaryBtn";
+import { Actions } from "react-native-router-flux";
 
 const styles = StyleSheet.create({
   root: {
@@ -46,6 +47,13 @@ const styles = StyleSheet.create({
   },
 });
 
+const onPressCancel = () => {
+    Actions["form1"]();
+
+  };const onPressConfirm = () => {
+    Actions["result"]();
+  };
+
 export default function Form5() {
   return (
     <View style={styles.root}>
@@ -68,8 +76,8 @@ export default function Form5() {
           <Text style={styles.textVariable}>samedi 10 février</Text>
         </Text>
       </View>
-      <PrimaryBtn text="valider" buttonStyle={styles.confirmButtonStyle} buttonTextStyle={styles.confirmButtonTextStyle} />
-      <PrimaryBtn text="annuler" buttonStyle={styles.cancelButtonStyle} buttonTextStyle={styles.cancelButtonTextStyle} />
+      <PrimaryBtn text="valider" buttonStyle={styles.confirmButtonStyle} buttonTextStyle={styles.confirmButtonTextStyle} onPress={onPressConfirm}/>
+      <PrimaryBtn text="annuler" buttonStyle={styles.cancelButtonStyle} buttonTextStyle={styles.cancelButtonTextStyle} onPress={onPressCancel}/>
     </View>
   );
 }
