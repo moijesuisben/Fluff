@@ -13,6 +13,9 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1
     // shadowRadius: 1,
     // elevation: 1,
+  },
+  press: {
+    color: "red"
   }
 });
 
@@ -60,47 +63,35 @@ export default function CustomCalendar() {
   };
   LocaleConfig.defaultLocale = "fr";
 
-  const checked = { selected: true, marked: true, selectedColor: "blue" };
+  const [dayPress, setDayPress] = React.useState();
+
+  console.log(dayPress, "dayPress");
 
   return (
     <Calendar
-      style={styles.root}
-      current={"2020-03-17"}
-      minDate={"2020-01-01"}
-      maxDate={"2020-12-31"}
+      style={[styles.root, dayPress && styles.press]}
       onDayPress={day => {
-        console.log("selected day", day);
-        checked;
-      }}
-      onDayLongPress={day => {
-        console.log("selected day", day);
+        setDayPress({ selected: day });
       }}
       monthFormat={"MMMM yyyy"}
-      onMonthChange={month => {
-        console.log("month changed", month);
-      }}
-      hideArrows={false}
-      // renderArrow={direction => (
-      //   <Icon name='ios-arrow-back' />
-      // )}
-      renderArrow={direction =>
-        <Icon name={direction === 'left' ? "ios-arrow-back" : "ios-arrow-forward"} />
-      }
-      hideExtraDays={true}
-      disableMonthChange={false}
-      //   firstDay={1}
-      hideDayNames={false}
-      showWeekNumbers={false}
+      renderArrow={direction => (
+        <Icon
+          name={direction === "left" ? "ios-arrow-back" : "ios-arrow-forward"}
+        />
+      )}
+      // hideExtraDays
       onPressArrowLeft={substractMonth => substractMonth()}
       onPressArrowRight={addMonth => addMonth()}
-      disableArrowLeft={false}
-      disableArrowRight={false}
       markedDates={{
-        checked
         // '2020-03-10': {selected: true, marked: true, selectedColor: 'blue'},
         // '2020-03-15': {marked: true},
         // '2020-03-3': {marked: true, dotColor: 'red', activeOpacity: 0},
         // '2020-03-20': {disabled: true, disableTouchEvent: true}
+        [dayPress]: {
+          selected: true,
+          disableTouchEvent: true,
+          selectedDotColor: "orange"
+        }
       }}
     />
   );

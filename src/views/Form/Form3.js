@@ -47,7 +47,7 @@ export default function Form3() {
         buttonStyleExtra={styles.infoDateTitle}
       />
       <View style={styles.calendar}>
-        <CustomCalendar />
+        <CustomCalendar/>
       </View>
       <View style={[styles.calendarButton, styles.root]}>
         <SecondaryBtn
