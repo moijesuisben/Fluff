@@ -1,9 +1,17 @@
 import React from "react";
-import { View, Text, StyleSheet, ScrollView, Image } from "react-native";
-import { Icon } from "native-base";
+import {
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
+  Image,
+  TouchableWithoutFeedback
+} from "react-native";
+import { Icon, Button } from "native-base";
 import * as variables from "../variables";
 import userList from "../data/user.json";
 import UserListItem from "../components/Layout/UserListItem";
+import { Actions } from "react-native-router-flux";
 
 const styles = StyleSheet.create({
   root: {
@@ -12,7 +20,7 @@ const styles = StyleSheet.create({
   title: {
     flexDirection: "row",
     alignItems: "center",
-    marginBottom: 30,
+    marginBottom: 30
   },
   titleIcon: {
     color: variables.osloGray
@@ -24,9 +32,16 @@ const styles = StyleSheet.create({
     color: variables.osloGray
   },
   item: {
-    flexDirection: "row",
+    flexDirection: "row"
+  },
+  button: {
+    backgroundColor: 'transparent'
   },
 });
+
+const onPressProfile = () => {
+  Actions["profile"]();
+};
 
 export default function Result() {
   return (
@@ -38,11 +53,12 @@ export default function Result() {
         </View>
         {userList.map((user, index) => (
           <View key={index}>
-          <UserListItem
-            media={user.media}
-            name={user.name}
-            distance={user.distance}
-          />
+              <UserListItem
+                media={user.media}
+                name={user.name}
+                distance={user.distance}
+                onPress={onPressProfile}
+              />
           </View>
         ))}
         {/* <View style={[styles.root, styles.item]}>

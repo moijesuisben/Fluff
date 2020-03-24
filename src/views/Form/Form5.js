@@ -32,27 +32,27 @@ const styles = StyleSheet.create({
     letterSpacing: 1
   },
   confirmButtonStyle: {
-      marginBottom: 30,
-      backgroundColor: variables.peachOrange,
+    marginBottom: 30,
+    backgroundColor: variables.peachOrange
   },
   confirmButtonTextStyle: {},
   cancelButtonStyle: {
-      backgroundColor: 'transparent',
-      borderWidth: 2,
-      borderColor: variables.peachOrange,
-      shadowColor: 'transparent'
+    backgroundColor: "transparent",
+    borderWidth: 2,
+    borderColor: variables.peachOrange,
+    shadowColor: "transparent"
   },
   cancelButtonTextStyle: {
-      color: variables.peachOrange,
-  },
+    color: variables.peachOrange
+  }
 });
 
 const onPressCancel = () => {
-    Actions["form1"]();
-
-  };const onPressConfirm = () => {
-    Actions["result"]();
-  };
+  Actions["form1"]();
+};
+const onPressConfirm = () => {
+  Actions["result"]();
+};
 
 export default function Form5() {
   return (
@@ -76,8 +76,18 @@ export default function Form5() {
           <Text style={styles.textVariable}>samedi 10 février</Text>
         </Text>
       </View>
-      <PrimaryBtn text="valider" buttonStyle={styles.confirmButtonStyle} buttonTextStyle={styles.confirmButtonTextStyle} onPress={onPressConfirm}/>
-      <PrimaryBtn text="annuler" buttonStyle={styles.cancelButtonStyle} buttonTextStyle={styles.cancelButtonTextStyle} onPress={onPressCancel}/>
+      <PrimaryBtn
+        text="valider"
+        buttonStyle={styles.confirmButtonStyle}
+        buttonTextStyle={styles.confirmButtonTextStyle}
+        onPress={onPressConfirm}
+      />
+      <PrimaryBtn
+        text="annuler"
+        buttonStyle={styles.cancelButtonStyle}
+        buttonTextStyle={styles.cancelButtonTextStyle}
+        onPress={onPressCancel}
+      />
     </View>
   );
 }

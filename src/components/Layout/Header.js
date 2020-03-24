@@ -18,10 +18,10 @@ const styles = StyleSheet.create({
   }
 });
 
-export default function Header() {
+export default function Header({extraStyle}) {
   return (
     <View style={styles.header}>
-      <Text style={styles.textHeader}>Fluff</Text>
+      <Text style={[styles.textHeader, extraStyle]}>Fluff</Text>
     </View>
   );
 }

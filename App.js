@@ -8,6 +8,7 @@ import * as variables from "./src/variables";
 import { Ionicons } from "@expo/vector-icons";
 import { StyleSheet } from "react-native";
 import Header from "./src/components/Layout/Header";
+import HeaderProfile from "./src/components/Layout/HeaderProfile";
 import Landing from "./src/views/Landing";
 import Form1 from "./src/views/Form/Form1";
 import Form2 from "./src/views/Form/Form2";
@@ -15,6 +16,7 @@ import Form3 from "./src/views/Form/Form3";
 import Form4 from "./src/views/Form/Form4";
 import Form5 from "./src/views/Form/Form5";
 import Result from "./src/views/Result";
+import ProfileAbout from "./src/views/Profile/ProfileAbout";
 
 const styles = StyleSheet.create({
   /* root: {
@@ -24,8 +26,15 @@ const styles = StyleSheet.create({
     height: 80,
     borderBottomWidth: 0,
     marginBottom: 55,
+    elevation: 0
+  },
+  headerProfile: {
+    height: 272,
+    borderBottomWidth: 0,
+    marginBottom: 55,
     elevation: 0,
-  }
+    // backgroundColor: variables.athensGray,
+  },
 });
 
 export default function App() {
@@ -63,6 +72,15 @@ export default function App() {
     >
       <Router>
         <Stack key="root">
+        <Scene
+            key="profile"
+            component={ProfileAbout}
+            navigationBarStyle={styles.headerProfile}
+            renderTitle={<HeaderProfile lineSelected={{marginLeft: 15}}/>}
+            // backTitle=" "
+            // backButtonTintColor={variables.hitGray}
+            // gesturesEnabled={false}
+          />
           <Scene
             key="landing"
             component={Landing}
@@ -85,6 +103,7 @@ export default function App() {
             backTitle=" "
             backButtonTintColor={variables.hitGray}
             gesturesEnabled={false}
+            animationEnabled={false}
           />
           <Scene
             key="form3"
@@ -122,13 +141,6 @@ export default function App() {
             backButtonTintColor={variables.hitGray}
             gesturesEnabled={false}
           />
-          {/* <Scene
-            key="home"
-            component={Home}
-            navigationBarStyle={styles.header}
-            renderTitle={<Header />}
-          />
-          <Scene key="contact" component={Contact} title="contact" /> */}
         </Stack>
       </Router>
     </Container>
