@@ -177,7 +177,7 @@ export default function App() {
             component={ProfileRate}
             navigationBarStyle={styles.headerProfile}
             renderTitle={
-              <HeaderProfile lineSelected={{ left: 30, width: 70 }} />
+              <HeaderProfile lineSelected={{ left: 235, width: 70 }} />
             }
             backTitle=" "
             backButtonTintColor={variables.hitGray}
@@ -189,7 +189,7 @@ export default function App() {
             component={ProfileMedia}
             navigationBarStyle={styles.headerProfile}
             renderTitle={
-              <HeaderProfile lineSelected={{ left: 30, width: 70 }} />
+              <HeaderProfile lineSelected={{ left: 330, width: 70 }} />
             }
             backTitle=" "
             backButtonTintColor={variables.hitGray}
