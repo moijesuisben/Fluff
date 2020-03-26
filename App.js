@@ -19,7 +19,7 @@ import Result from "./src/views/Result";
 import ProfileAbout from "./src/views/Profile/ProfileAbout";
 import ProfileCare from "./src/views/Profile/ProfileCare";
 import ProfileMedia from "./src/views/Profile/ProfileMedia";
-import ProfileRate from "./src/views/Profile/ProfileRate";
+import ProfileRate from "./src/views/Profile/ProfileScore";
 
 import CustomTabBar from "./src/components/TabBar/CustomTabBar";
 import CustomTabBarProfile from "./src/components/TabBar/CustomTabBarProfile";
@@ -173,7 +173,7 @@ export default function App() {
             tabBarComponent={CustomTabBarProfile}
           />
           <Scene
-            key="profileRate"
+            key="profileScore"
             component={ProfileRate}
             navigationBarStyle={styles.headerProfile}
             renderTitle={

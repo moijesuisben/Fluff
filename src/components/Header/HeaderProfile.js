@@ -127,7 +127,7 @@ const onPressCare = () => {
 };
 
 const onPressRate = () => {
-  Actions["profileRate"]();
+  Actions["profileScore"]();
 };
 
 const onPressMedia = () => {
