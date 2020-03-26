@@ -1,5 +1,5 @@
 import React from "react";
-import { Router, Stack, Scene } from "react-native-router-flux";
+import { Router, Stack, Scene, Tabs } from "react-native-router-flux";
 
 import { AppLoading } from "expo";
 import { Container } from "native-base";
@@ -17,6 +17,8 @@ import Form4 from "./src/views/Form/Form4";
 import Form5 from "./src/views/Form/Form5";
 import Result from "./src/views/Result";
 import ProfileAbout from "./src/views/Profile/ProfileAbout";
+import CustomTabBar from "./src/components/Layout/CustomTabBar";
+import CustomTabBarProfile from "./src/components/Layout/CustomTabBarProfile";
 
 const styles = StyleSheet.create({
   /* root: {
@@ -29,12 +31,13 @@ const styles = StyleSheet.create({
     elevation: 0
   },
   headerProfile: {
+    width: "100%",
     height: 272,
     borderBottomWidth: 0,
     marginBottom: 55,
-    elevation: 0,
+    elevation: 0
     // backgroundColor: variables.athensGray,
-  },
+  }
 });
 
 export default function App() {
@@ -71,16 +74,9 @@ export default function App() {
     //style={styles.root}
     >
       <Router>
-        <Stack key="root">
-        <Scene
-            key="profile"
-            component={ProfileAbout}
-            navigationBarStyle={styles.headerProfile}
-            renderTitle={<HeaderProfile lineSelected={{marginLeft: 15}}/>}
-            // backTitle=" "
-            // backButtonTintColor={variables.hitGray}
-            // gesturesEnabled={false}
-          />
+        <Tabs key="root" 
+        hideTabBar={true}
+        >
           <Scene
             key="landing"
             component={Landing}
@@ -141,7 +137,21 @@ export default function App() {
             backButtonTintColor={variables.hitGray}
             gesturesEnabled={false}
           />
-        </Stack>
+          <Tabs tabBarComponent={CustomTabBar}>
+            <Scene
+              key="profile"
+              component={ProfileAbout}
+              navigationBarStyle={styles.headerProfile}
+              renderTitle={
+                <HeaderProfile lineSelected={{ left: 30, width: 70 }} />
+              }
+              backTitle=" "
+              backButtonTintColor={variables.hitGray}
+              gesturesEnabled={false}
+              tabBarComponent={CustomTabBarProfile}
+            />
+          </Tabs>
+        </Tabs>
       </Router>
     </Container>
   );

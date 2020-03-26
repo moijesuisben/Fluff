@@ -1,14 +1,24 @@
 import React from "react";
-import { StyleSheet, View, Image, Text, ImageBackground } from "react-native";
+import {
+  StyleSheet,
+  View,
+  Image,
+  Text,
+  ImageBackground,
+  Dimensions,
+  TouchableHighlight
+} from "react-native";
 import * as variables from "../../variables";
 import { Icon } from "native-base";
 import profileCategory from "../../data/profileCategory.json";
+
+const { width, height } = Dimensions.get("window");
 
 const styles = StyleSheet.create({
   root: {},
   header: {
     width: "100%",
-    height: "100%",
+    height: "100%"
   },
   background: {
     width: "160%",
@@ -55,7 +65,8 @@ const styles = StyleSheet.create({
     color: variables.hitGray
   },
   blockEnd: {
-    width: "100%",
+    width: width - 60,
+    left: -10,
     justifyContent: "flex-start",
     marginTop: 20,
     marginLeft: 30
@@ -75,7 +86,7 @@ const styles = StyleSheet.create({
   },
   categoryBlock: {
     flexDirection: "row",
-    width: "90%",
+    width: "100%",
     justifyContent: "space-between",
     top: -10
   },
@@ -98,14 +109,29 @@ const styles = StyleSheet.create({
   line: {
     borderBottomColor: variables.mystic,
     borderBottomWidth: 1,
-    width: "100%"
+    width: width
   },
   lineSelected: {
-    width: 60,
     borderBottomWidth: 3,
-    borderBottomColor: variables.peachOrange,
-  },
+    borderBottomColor: variables.peachOrange
+  }
 });
+
+const onPressAbout = () => {
+  Actions["profileAbout"]();
+};
+
+const onPressKeep = () => {
+  Actions["profileKeep"]();
+};
+
+const onPressRate = () => {
+  Actions["profileeRate"]();
+};
+
+const onPressMedia = () => {
+  Actions["profileMedia"]();
+};
 
 export default function HeaderProfile({ extraStyle, lineSelected }) {
   return (
@@ -138,10 +164,12 @@ export default function HeaderProfile({ extraStyle, lineSelected }) {
           </View>
           <View style={styles.categoryBlock}>
             {profileCategory.map((category, index) => (
-              <View key={index} style={styles.categories}>
-                <Text style={styles.categoryNumber}>{category.number}</Text>
-                <Text style={styles.categoryName}>{category.category}</Text>
-              </View>
+              <TouchableHighlight onPress={category.onPress}>
+                <View key={index} style={styles.categories}>
+                  <Text style={styles.categoryNumber}>{category.number}</Text>
+                  <Text style={styles.categoryName}>{category.category}</Text>
+                </View>
+              </TouchableHighlight>
             ))}
           </View>
         </View>
