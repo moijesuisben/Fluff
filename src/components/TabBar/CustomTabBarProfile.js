@@ -58,11 +58,11 @@ const onPressSentRequest = () => {
 };
 
 const onPressSearch = () => {
-  Actions["form1"]();
+  Actions["result"]();
 };
 
 const onPressProfile = () => {
-  Actions["profile"]();
+  Actions["profileAbout"]();
 };
 
 const onPressMessage = () => {
@@ -79,7 +79,7 @@ export default function CustomTabBarProfile({
   message,
   settings
 }) {
-  console.log(Actions.currentScene, 'cs');
+  console.log(Actions.currentScene, "cs");
   return (
     <View>
       <TouchableHighlight onPress={onPressSentMessage}>

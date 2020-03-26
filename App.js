@@ -23,6 +23,8 @@ import ProfileRate from "./src/views/Profile/ProfileRate";
 
 import CustomTabBar from "./src/components/TabBar/CustomTabBar";
 import CustomTabBarProfile from "./src/components/TabBar/CustomTabBarProfile";
+import MessageList from "./src/views/Message/MessageList";
+import SettingsList from "./src/views/Settings/SettingsList";
 
 const styles = StyleSheet.create({
   /* root: {
@@ -78,14 +80,13 @@ export default function App() {
     //style={styles.root}
     >
       <Router>
-        <Tabs key="root" 
-        hideTabBar={true}
-        >
+        <Tabs key="root">
           <Scene
             key="landing"
             component={Landing}
             navigationBarStyle={styles.header}
             renderTitle={<Header />}
+            hideTabBar={true}
           />
           <Scene
             key="form1"
@@ -94,6 +95,7 @@ export default function App() {
             renderTitle={<Header />}
             left={() => null}
             gesturesEnabled={false}
+            hideTabBar={true}
           />
           <Scene
             key="form2"
@@ -104,6 +106,7 @@ export default function App() {
             backButtonTintColor={variables.hitGray}
             gesturesEnabled={false}
             animationEnabled={false}
+            hideTabBar={true}
           />
           <Scene
             key="form3"
@@ -113,6 +116,7 @@ export default function App() {
             backTitle=" "
             backButtonTintColor={variables.hitGray}
             gesturesEnabled={false}
+            hideTabBar={true}
           />
           <Scene
             key="form4"
@@ -122,6 +126,7 @@ export default function App() {
             backTitle=" "
             backButtonTintColor={variables.hitGray}
             gesturesEnabled={false}
+            hideTabBar={true}
           />
           <Scene
             key="form5"
@@ -131,6 +136,7 @@ export default function App() {
             backTitle=" "
             backButtonTintColor={variables.hitGray}
             gesturesEnabled={false}
+            hideTabBar={true}
           />
           <Scene
             key="result"
@@ -140,57 +146,76 @@ export default function App() {
             backTitle=" "
             backButtonTintColor={variables.hitGray}
             gesturesEnabled={false}
+            hideTabBar={true}
           />
-          <Tabs tabBarComponent={CustomTabBar}>
-            <Scene
-              key="profileAbout"
-              component={ProfileAbout}
-              navigationBarStyle={styles.headerProfile}
-              renderTitle={
-                <HeaderProfile lineSelected={{ left: 30, width: 70 }} />
-              }
-              backTitle=" "
-              backButtonTintColor={variables.hitGray}
-              gesturesEnabled={false}
-              tabBarComponent={CustomTabBarProfile}
-            />
-            <Scene
-              key="profileCare"
-              component={ProfileCare}
-              navigationBarStyle={styles.headerProfile}
-              renderTitle={
-                <HeaderProfile lineSelected={{ left: 140, width: 70 }} />
-              }
-              backTitle=" "
-              backButtonTintColor={variables.hitGray}
-              gesturesEnabled={false}
-              tabBarComponent={CustomTabBarProfile}
-            />
-            <Scene
-              key="profileRate"
-              component={ProfileRate}
-              navigationBarStyle={styles.headerProfile}
-              renderTitle={
-                <HeaderProfile lineSelected={{ left: 30, width: 70 }} />
-              }
-              backTitle=" "
-              backButtonTintColor={variables.hitGray}
-              gesturesEnabled={false}
-              tabBarComponent={CustomTabBarProfile}
-            />
-            <Scene
-              key="profileMedia"
-              component={ProfileMedia}
-              navigationBarStyle={styles.headerProfile}
-              renderTitle={
-                <HeaderProfile lineSelected={{ left: 30, width: 70 }} />
-              }
-              backTitle=" "
-              backButtonTintColor={variables.hitGray}
-              gesturesEnabled={false}
-              tabBarComponent={CustomTabBarProfile}
-            />
-          </Tabs>
+          <Scene
+            key="profileAbout"
+            component={ProfileAbout}
+            navigationBarStyle={styles.headerProfile}
+            renderTitle={
+              <HeaderProfile lineSelected={{ left: 30, width: 70 }} />
+            }
+            backTitle=" "
+            backButtonTintColor={variables.hitGray}
+            gesturesEnabled={false}
+            tabBarComponent={CustomTabBarProfile}
+          />
+          <Scene
+            key="profileCare"
+            component={ProfileCare}
+            navigationBarStyle={styles.headerProfile}
+            renderTitle={
+              <HeaderProfile lineSelected={{ left: 140, width: 70 }} />
+            }
+            backTitle=" "
+            backButtonTintColor={variables.hitGray}
+            gesturesEnabled={false}
+            tabBarComponent={CustomTabBarProfile}
+          />
+          <Scene
+            key="profileRate"
+            component={ProfileRate}
+            navigationBarStyle={styles.headerProfile}
+            renderTitle={
+              <HeaderProfile lineSelected={{ left: 30, width: 70 }} />
+            }
+            backTitle=" "
+            backButtonTintColor={variables.hitGray}
+            gesturesEnabled={false}
+            tabBarComponent={CustomTabBarProfile}
+          />
+          <Scene
+            key="profileMedia"
+            component={ProfileMedia}
+            navigationBarStyle={styles.headerProfile}
+            renderTitle={
+              <HeaderProfile lineSelected={{ left: 30, width: 70 }} />
+            }
+            backTitle=" "
+            backButtonTintColor={variables.hitGray}
+            gesturesEnabled={false}
+            tabBarComponent={CustomTabBarProfile}
+          />
+          <Scene
+            key="message"
+            component={MessageList}
+            navigationBarStyle={styles.header}
+            renderTitle={<Header />}
+            backTitle=" "
+            backButtonTintColor={variables.hitGray}
+            gesturesEnabled={false}
+            tabBarComponent={CustomTabBar}
+          />
+          <Scene
+            key="settings"
+            component={SettingsList}
+            navigationBarStyle={styles.header}
+            renderTitle={<Header />}
+            backTitle=" "
+            backButtonTintColor={variables.hitGray}
+            gesturesEnabled={false}
+            tabBarComponent={CustomTabBar}
+          />
         </Tabs>
       </Router>
     </Container>
