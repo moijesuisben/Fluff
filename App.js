@@ -7,8 +7,8 @@ import * as Font from "expo-font";
 import * as variables from "./src/variables";
 import { Ionicons } from "@expo/vector-icons";
 import { StyleSheet } from "react-native";
-import Header from "./src/components/Layout/Header";
-import HeaderProfile from "./src/components/Layout/HeaderProfile";
+import Header from "./src/components/Header/Header";
+import HeaderProfile from "./src/components/Header/HeaderProfile";
 import Landing from "./src/views/Landing";
 import Form1 from "./src/views/Form/Form1";
 import Form2 from "./src/views/Form/Form2";
@@ -21,8 +21,8 @@ import ProfileCare from "./src/views/Profile/ProfileCare";
 import ProfileMedia from "./src/views/Profile/ProfileMedia";
 import ProfileRate from "./src/views/Profile/ProfileRate";
 
-import CustomTabBar from "./src/components/Layout/CustomTabBar";
-import CustomTabBarProfile from "./src/components/Layout/CustomTabBarProfile";
+import CustomTabBar from "./src/components/TabBar/CustomTabBar";
+import CustomTabBarProfile from "./src/components/TabBar/CustomTabBarProfile";
 
 const styles = StyleSheet.create({
   /* root: {
@@ -159,7 +159,7 @@ export default function App() {
               component={ProfileCare}
               navigationBarStyle={styles.headerProfile}
               renderTitle={
-                <HeaderProfile lineSelected={{ left: 30, width: 70 }} />
+                <HeaderProfile lineSelected={{ left: 140, width: 70 }} />
               }
               backTitle=" "
               backButtonTintColor={variables.hitGray}

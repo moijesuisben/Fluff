@@ -1,7 +1,6 @@
 import React from "react";
 import { StyleSheet, View, Image, Text, TouchableOpacity } from "react-native";
 import * as variables from "../../variables";
-import { Icon } from "native-base";
 
 const styles = StyleSheet.create({
   root: {},
@@ -43,12 +42,15 @@ export default function UserListItem({ media, name, distance, onPress }) {
     <View>
       <TouchableOpacity onPress={onPress}>
         <View style={styles.box}>
-          <Image style={styles.media} source={{ uri: media }} resizeMode="cover"/>
+          <Image
+            style={styles.media}
+            source={{ uri: media }}
+            resizeMode="cover"
+          />
           <View>
             <Text style={styles.name}>{name}</Text>
             <Text style={styles.distance}>{distance} env.</Text>
           </View>
-          {/* <Icon style={styles.icon} name="ios-more" /> */}
         </View>
         <View style={styles.line}></View>
       </TouchableOpacity>

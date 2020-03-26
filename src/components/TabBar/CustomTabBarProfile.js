@@ -79,6 +79,7 @@ export default function CustomTabBarProfile({
   message,
   settings
 }) {
+  console.log(Actions.currentScene, 'cs');
   return (
     <View>
       <TouchableHighlight onPress={onPressSentMessage}>

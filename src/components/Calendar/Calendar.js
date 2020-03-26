@@ -63,7 +63,7 @@ export default function CustomCalendar() {
   };
   LocaleConfig.defaultLocale = "fr";
 
-  const [dayPress, setDayPress] = React.useState();
+  const [dayPress, setDayPress] = React.useState('2020-03-12');
 
   console.log(dayPress, "dayPress");
 
@@ -71,7 +71,7 @@ export default function CustomCalendar() {
     <Calendar
       style={[styles.root, dayPress && styles.press]}
       onDayPress={day => {
-        setDayPress({ selected: day });
+        setDayPress(day.dateString);
       }}
       monthFormat={"MMMM yyyy"}
       renderArrow={direction => (
@@ -83,12 +83,9 @@ export default function CustomCalendar() {
       onPressArrowLeft={substractMonth => substractMonth()}
       onPressArrowRight={addMonth => addMonth()}
       markedDates={{
-        // '2020-03-10': {selected: true, marked: true, selectedColor: 'blue'},
-        // '2020-03-15': {marked: true},
-        // '2020-03-3': {marked: true, dotColor: 'red', activeOpacity: 0},
-        // '2020-03-20': {disabled: true, disableTouchEvent: true}
         [dayPress]: {
           selected: true,
+          marked: true,
           disableTouchEvent: true,
           selectedDotColor: "orange"
         }

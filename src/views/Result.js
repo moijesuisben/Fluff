@@ -10,7 +10,7 @@ import {
 import { Icon, Button } from "native-base";
 import * as variables from "../variables";
 import userList from "../data/user.json";
-import UserListItem from "../components/Layout/UserListItem";
+import UserListItem from "../components/List/UserListItem";
 import { Actions } from "react-native-router-flux";
 
 const styles = StyleSheet.create({
