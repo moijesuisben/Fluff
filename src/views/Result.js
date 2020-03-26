@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
 });
 
 const onPressProfile = () => {
-  Actions["profile"]();
+  Actions["profileAbout"]();
 };
 
 export default function Result() {

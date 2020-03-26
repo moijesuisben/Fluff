@@ -11,6 +11,7 @@ import {
 import * as variables from "../../variables";
 import { Icon } from "native-base";
 import profileCategory from "../../data/profileCategory.json";
+import { Actions } from "react-native-router-flux";
 
 const { width, height } = Dimensions.get("window");
 
@@ -163,14 +164,40 @@ export default function HeaderProfile({ extraStyle, lineSelected }) {
             />
           </View>
           <View style={styles.categoryBlock}>
-            {profileCategory.map((category, index) => (
+            {/* {profileCategory.map((category, index) => (
               <TouchableHighlight onPress={category.onPress}>
                 <View key={index} style={styles.categories}>
                   <Text style={styles.categoryNumber}>{category.number}</Text>
                   <Text style={styles.categoryName}>{category.category}</Text>
                 </View>
               </TouchableHighlight>
-            ))}
+            ))} */}
+
+            <TouchableHighlight onPress={onPressAbout}>
+                <View style={styles.categories}>
+                  <Text style={styles.categoryNumber}></Text>
+                  <Text style={styles.categoryName}>À Propos</Text>
+                </View>
+              </TouchableHighlight>
+              <TouchableHighlight onPress={onPressKeep}>
+                <View style={styles.categories}>
+                  <Text style={styles.categoryNumber}>45</Text>
+                  <Text style={styles.categoryName}>Gardes</Text>
+                </View>
+              </TouchableHighlight>
+              <TouchableHighlight onPress={onPressRate}>
+                <View style={styles.categories}>
+                  <Text style={styles.categoryNumber}>17</Text>
+                  <Text style={styles.categoryName}>Avis</Text>
+                </View>
+              </TouchableHighlight>
+              <TouchableHighlight onPress={onPressAbout}>
+                <View style={styles.categories}>
+                  <Text style={styles.categoryNumber}>50</Text>
+                  <Text style={styles.categoryName}>Médias</Text>
+                </View>
+              </TouchableHighlight>
+
           </View>
         </View>
         <View style={styles.line}>

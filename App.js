@@ -139,7 +139,7 @@ export default function App() {
           />
           <Tabs tabBarComponent={CustomTabBar}>
             <Scene
-              key="profile"
+              key="profileAbout"
               component={ProfileAbout}
               navigationBarStyle={styles.headerProfile}
               renderTitle={
