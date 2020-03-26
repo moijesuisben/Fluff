@@ -17,6 +17,10 @@ import Form4 from "./src/views/Form/Form4";
 import Form5 from "./src/views/Form/Form5";
 import Result from "./src/views/Result";
 import ProfileAbout from "./src/views/Profile/ProfileAbout";
+import ProfileCare from "./src/views/Profile/ProfileCare";
+import ProfileMedia from "./src/views/Profile/ProfileMedia";
+import ProfileRate from "./src/views/Profile/ProfileRate";
+
 import CustomTabBar from "./src/components/Layout/CustomTabBar";
 import CustomTabBarProfile from "./src/components/Layout/CustomTabBarProfile";
 
@@ -141,6 +145,42 @@ export default function App() {
             <Scene
               key="profileAbout"
               component={ProfileAbout}
+              navigationBarStyle={styles.headerProfile}
+              renderTitle={
+                <HeaderProfile lineSelected={{ left: 30, width: 70 }} />
+              }
+              backTitle=" "
+              backButtonTintColor={variables.hitGray}
+              gesturesEnabled={false}
+              tabBarComponent={CustomTabBarProfile}
+            />
+            <Scene
+              key="profileCare"
+              component={ProfileCare}
+              navigationBarStyle={styles.headerProfile}
+              renderTitle={
+                <HeaderProfile lineSelected={{ left: 30, width: 70 }} />
+              }
+              backTitle=" "
+              backButtonTintColor={variables.hitGray}
+              gesturesEnabled={false}
+              tabBarComponent={CustomTabBarProfile}
+            />
+            <Scene
+              key="profileRate"
+              component={ProfileRate}
+              navigationBarStyle={styles.headerProfile}
+              renderTitle={
+                <HeaderProfile lineSelected={{ left: 30, width: 70 }} />
+              }
+              backTitle=" "
+              backButtonTintColor={variables.hitGray}
+              gesturesEnabled={false}
+              tabBarComponent={CustomTabBarProfile}
+            />
+            <Scene
+              key="profileMedia"
+              component={ProfileMedia}
               navigationBarStyle={styles.headerProfile}
               renderTitle={
                 <HeaderProfile lineSelected={{ left: 30, width: 70 }} />

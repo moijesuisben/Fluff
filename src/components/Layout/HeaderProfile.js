@@ -122,12 +122,12 @@ const onPressAbout = () => {
   Actions["profileAbout"]();
 };
 
-const onPressKeep = () => {
-  Actions["profileKeep"]();
+const onPressCare = () => {
+  Actions["profileCare"]();
 };
 
 const onPressRate = () => {
-  Actions["profileeRate"]();
+  Actions["profileRate"]();
 };
 
 const onPressMedia = () => {
@@ -179,7 +179,7 @@ export default function HeaderProfile({ extraStyle, lineSelected }) {
                   <Text style={styles.categoryName}>À Propos</Text>
                 </View>
               </TouchableHighlight>
-              <TouchableHighlight onPress={onPressKeep}>
+              <TouchableHighlight onPress={onPressCare}>
                 <View style={styles.categories}>
                   <Text style={styles.categoryNumber}>45</Text>
                   <Text style={styles.categoryName}>Gardes</Text>
@@ -191,7 +191,7 @@ export default function HeaderProfile({ extraStyle, lineSelected }) {
                   <Text style={styles.categoryName}>Avis</Text>
                 </View>
               </TouchableHighlight>
-              <TouchableHighlight onPress={onPressAbout}>
+              <TouchableHighlight onPress={onPressMedia}>
                 <View style={styles.categories}>
                   <Text style={styles.categoryNumber}>50</Text>
                   <Text style={styles.categoryName}>Médias</Text>
