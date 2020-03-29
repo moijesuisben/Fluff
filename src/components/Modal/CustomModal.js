@@ -11,6 +11,7 @@ import {
   View
 } from "react-native";
 import * as variables from "../../variables";
+import DateTimePickerModal from "react-native-modal-datetime-picker";
 
 const { width, height } = Dimensions.get("window");
 
@@ -48,7 +49,7 @@ const styles = StyleSheet.create({
   buttons: {
     flexDirection: "row",
     justifyContent: "space-between",
-    width: '100%'
+    width: "100%"
   },
   confirm: {
     color: variables.peachOrange
@@ -83,6 +84,7 @@ class CustomModal extends React.Component {
         <View style={styles.centeredView}>
           <View style={styles.modal}>
             <Text style={styles.text}>choisir une heure</Text>
+
             <View style={styles.buttons}>
               <TouchableHighlight
                 onPress={() => {

@@ -1,12 +1,11 @@
-import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import React, { useState } from "react";
+import { View, StyleSheet } from "react-native";
 import * as variables from "../../variables";
 import InputHeading from "../../components/Text/InputHeading";
 import CustomCalendar from "../../components/Calendar/Calendar";
 import SecondaryBtn from "../../components/Button/SecondaryBtn";
 import { Actions } from "react-native-router-flux";
-import CustomModal from "../../components/Modal/CustomModal";
-import Test from "../../components/Modal/test";
+import DateTimePickerModal from "react-native-modal-datetime-picker";
 
 const styles = StyleSheet.create({
   root: {
@@ -32,18 +31,40 @@ const styles = StyleSheet.create({
   nextButton: {
     marginTop: 47,
     alignItems: "center"
+  },
+  select: {
+    color: variables.peachOrange
   }
 });
 
-const onPressBtn = () => {
-  Actions["form4"]();
-};
-
 export default function Form3() {
-  const modal = React.useRef();
+  const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
+  const [timeSelect, setTimeSelect] = useState(false);
+  const [daySelect, setDaySelect] = useState(false);
 
-  const onPressModal = () => {
-    modal.current.show();
+  const onPressBtn = () => {
+    (timeSelect && Actions["form4"]()) || (daySelect && Actions["form4"]());
+  };
+
+  const showDatePicker = () => {
+    setDatePickerVisibility(true);
+    setTimeSelect(true);
+    setDaySelect(false);
+  };
+
+  const hideDatePicker = () => {
+    setDatePickerVisibility(false);
+    setTimeSelect(false);
+  };
+
+  const handleConfirm = date => {
+    hideDatePicker();
+    setTimeSelect(true);
+  };
+
+  const dayCheck = () => {
+    setDaySelect(true);
+    setTimeSelect(false);
   };
 
   return (
@@ -51,7 +72,6 @@ export default function Form3() {
       <InputHeading
         text="date de début"
         style={styles.root}
-        button="hello"
         buttonStyleExtra={styles.infoDateTitle}
       />
       <View style={styles.calendar}>
@@ -60,19 +80,35 @@ export default function Form3() {
       <View style={[styles.calendarButton, styles.root]}>
         <SecondaryBtn
           text="choisir une heure"
-          TextStyle={styles.CalendarButtonText}
-          onPress={onPressModal}
+          TextStyle={[styles.CalendarButtonText, timeSelect && styles.select]}
+          onPress={showDatePicker}
         />
         <SecondaryBtn
           text="toute la journée"
-          TextStyle={styles.CalendarButtonText}
+          TextStyle={[styles.CalendarButtonText, daySelect && styles.select]}
+          onPress={dayCheck}
         />
       </View>
       <View style={styles.nextButton}>
-        <SecondaryBtn text="suivant" onPress={onPressBtn} />
+        <SecondaryBtn
+          text="suivant"
+          onPress={onPressBtn}
+          TextStyle={
+            (daySelect && styles.select) || (timeSelect && styles.select)
+          }
+        />
       </View>
 
-      <CustomModal ref={modal} />
+      <DateTimePickerModal
+        isVisible={isDatePickerVisible}
+        mode="time"
+        locale="fr_FR"
+        onConfirm={handleConfirm}
+        onCancel={hideDatePicker}
+        headerTextIOS="Choisir une heure"
+        cancelTextIOS="Annuler"
+        confirmTextIOS="Confirmer"
+      />
     </View>
   );
 }

@@ -6,7 +6,8 @@ import * as variables from "../../variables";
 const styles = StyleSheet.create({
   root: {},
   button: {
-    justifyContent: "center"
+    justifyContent: "center",
+    backgroundColor: 'transparent',
   },
   buttonText: {
     textTransform: "uppercase",
@@ -20,9 +21,9 @@ const styles = StyleSheet.create({
   }
 });
 
-export default function SecondaryBtn({ text, onPress, TextStyle, disabled }) {
+export default function SecondaryBtn({ text, onPress, TextStyle, disabled, extraStyle }) {
   return (
-    <Button transparent style={styles.button} onPress={onPress} disabled={disabled}>
+    <Button rounded style={[styles.button, extraStyle]} onPress={onPress} disabled={disabled}>
       <Text style={[styles.buttonText,TextStyle]}>{text}</Text>
     </Button>
   );

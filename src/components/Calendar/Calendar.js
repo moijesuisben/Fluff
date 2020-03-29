@@ -4,6 +4,7 @@ import { LocaleConfig } from "react-native-calendars";
 import { View, Text, StyleSheet } from "react-native";
 import { Icon } from "native-base";
 import { Directions } from "react-native-gesture-handler";
+import * as variables from '../../variables';
 
 const styles = StyleSheet.create({
   root: {
@@ -87,7 +88,7 @@ export default function CustomCalendar() {
           selected: true,
           marked: true,
           disableTouchEvent: true,
-          selectedDotColor: "orange"
+          selectedColor: variables.peachOrange,
         }
       }}
     />
