@@ -5,6 +5,8 @@ import InputHeading from "../../components/Text/InputHeading";
 import CustomCalendar from "../../components/Calendar/Calendar";
 import SecondaryBtn from "../../components/Button/SecondaryBtn";
 import { Actions } from "react-native-router-flux";
+import CustomModal from "../../components/Modal/CustomModal";
+import Test from "../../components/Modal/test";
 
 const styles = StyleSheet.create({
   root: {
@@ -38,6 +40,12 @@ const onPressBtn = () => {
 };
 
 export default function Form3() {
+  const modal = React.useRef();
+
+  const onPressModal = () => {
+    modal.current.show();
+  };
+
   return (
     <View>
       <InputHeading
@@ -47,12 +55,13 @@ export default function Form3() {
         buttonStyleExtra={styles.infoDateTitle}
       />
       <View style={styles.calendar}>
-        <CustomCalendar/>
+        <CustomCalendar />
       </View>
       <View style={[styles.calendarButton, styles.root]}>
         <SecondaryBtn
           text="choisir une heure"
           TextStyle={styles.CalendarButtonText}
+          onPress={onPressModal}
         />
         <SecondaryBtn
           text="toute la journée"
@@ -62,6 +71,8 @@ export default function Form3() {
       <View style={styles.nextButton}>
         <SecondaryBtn text="suivant" onPress={onPressBtn} />
       </View>
+
+      <CustomModal ref={modal} />
     </View>
   );
 }
