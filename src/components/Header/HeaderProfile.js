@@ -89,6 +89,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     width: "100%",
     justifyContent: "space-between",
+    alignItems: "flex-end",
     top: -10
   },
   categories: {

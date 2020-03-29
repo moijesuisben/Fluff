@@ -47,28 +47,25 @@ const styles = StyleSheet.create({
   }
 });
 
-export default function CardNotice({ star1, star2, star3, star4, star5 }) {
+export default function CardNotice({ stars, star1, star2, star3, star4, star5, date, title, text }) {
   return (
     <View>
       <View style={styles.root}>
         <View style={styles.top}>
           <View style={styles.stars}>
-            <Icon name="ios-star" style={[styles.star, star1]} />
-            <Icon name="ios-star" style={[styles.star, star2]} />
-            <Icon name="ios-star" style={[styles.star, star3]} />
-            <Icon name="ios-star" style={[styles.star, star4]} />
-            <Icon name="ios-star" style={[styles.star, star5]} />
+            <Icon name="ios-star" style={[styles.star, stars < 1 && star1]} />
+            <Icon name="ios-star" style={[styles.star, stars < 2 && star2]} />
+            <Icon name="ios-star" style={[styles.star, stars < 3 && star3]} />
+            <Icon name="ios-star" style={[styles.star, stars < 4 && star4]} />
+            <Icon name="ios-star" style={[styles.star, stars < 5 && star5]} />
           </View>
-          <Text style={styles.date}>Il y a 2 jours</Text>
+          <Text style={styles.date}>{date}</Text>
         </View>
         <Text style={styles.title}>
-          Une véritable perle soucieuse du bien-être des animaux
+          {title}
         </Text>
         <Text style={styles.text}>
-          Je ne peux que recommander Camille. Une fille fantastique qui s’est
-          occupé d’Albert avec beaucoup d’attention. Elle l’a amené aux bords de
-          l’Erdre durant toute l’après-midi. Petit bonus, Albert c’était roulé
-          dans la boue et elle lui a donné un bain.
+          {text}
         </Text>
       </View>
       <View style={styles.line}></View>
