@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, Image } from "react-native";
 import * as variables from "../../variables";
 import InputHeading from "../../components/Text/InputHeading";
 import CustomCalendar from "../../components/Calendar/Calendar";
 import SecondaryBtn from "../../components/Button/SecondaryBtn";
 import { Actions } from "react-native-router-flux";
 import DateTimePickerModal from "react-native-modal-datetime-picker";
+
 
 const styles = StyleSheet.create({
   root: {
@@ -34,6 +35,15 @@ const styles = StyleSheet.create({
   },
   select: {
     color: variables.peachOrange
+  },
+  blobBox: {
+    alignItems: "center",
+    marginTop: variables.marginRoot,
+  },
+  blob: {
+    alignItems: "center",
+    height: 30,
+    width: 210,
   }
 });
 
@@ -109,6 +119,9 @@ export default function Form3() {
         cancelTextIOS="Annuler"
         confirmTextIOS="Confirmer"
       />
+      <View style={styles.blobBox}>
+      <Image style={styles.blob} source={require("../../../assets/media/picto/blob/blob4_5.png")} resizeMode="contain"/>
+      </View>
     </View>
   );
 }

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, Image } from "react-native";
 import InputHeading from "../../components/Text/InputHeading";
 import InputSelect from "../../components/Input/InputSelect";
 import BoxInputSelect from "../../components/Input/BoxInputSelect";
@@ -41,6 +41,15 @@ const styles = StyleSheet.create({
   },
   boxActiveText: {
     color: "white"
+  },
+  blobBox: {
+    alignItems: "center",
+    marginTop: variables.marginRoot,
+  },
+  blob: {
+    alignItems: "center",
+    height: 30,
+    width: 210,
   }
 });
 
@@ -122,7 +131,7 @@ export default function Form1() {
         <View flexDirection="row">
           <BoxInputSelect
             text="hébergement"
-            media={require("../../../assets/media/picto/hebergement.png")}
+            media={serviceTypeCheck === "hébergement" ? require("../../../assets/media/picto/hebergementWhite.png") : require("../../../assets/media/picto/hebergement.png")}
             boxStyle={serviceTypeCheck === "hébergement" && styles.boxActive}
             boxStyleText={
               serviceTypeCheck === "hébergement" && styles.boxActiveText
@@ -131,7 +140,7 @@ export default function Form1() {
           />
           <BoxInputSelect
             text="garde à domicile"
-            media={require("../../../assets/media/picto/gardeADomicile.png")}
+            media={serviceTypeCheck === "garde à domicile" ? require("../../../assets/media/picto/gardeADomicileWhite.png") : require("../../../assets/media/picto/gardeADomicile.png")}
             boxStyle={
               serviceTypeCheck === "garde à domicile" && styles.boxActive
             }
@@ -142,7 +151,7 @@ export default function Form1() {
           />
           <BoxInputSelect
             text="visite à domicile"
-            media={require("../../../assets/media/picto/visite.png")}
+            media={serviceTypeCheck === "visite à domicile" ? require("../../../assets/media/picto/visiteWhite.png") : require("../../../assets/media/picto/visite.png")}
             boxStyle={
               serviceTypeCheck === "visite à domicile" && styles.boxActive
             }
@@ -155,7 +164,7 @@ export default function Form1() {
         <View flexDirection="row">
           <BoxInputSelect
             text="garderie"
-            media={require("../../../assets/media/picto/garderie.png")}
+            media={serviceTypeCheck === "garderie" ? require("../../../assets/media/picto/garderieWhite.png") : require("../../../assets/media/picto/garderie.png")}
             boxStyle={serviceTypeCheck === "garderie" && styles.boxActive}
             boxStyleText={
               serviceTypeCheck === "garderie" && styles.boxActiveText
@@ -164,7 +173,7 @@ export default function Form1() {
           />
           <BoxInputSelect
             text="promenade"
-            media={require("../../../assets/media/picto/promenade.png")}
+            media={serviceTypeCheck === "promenade" ? require("../../../assets/media/picto/promenadeWhite.png") : require("../../../assets/media/picto/promenade.png")}
             boxStyle={serviceTypeCheck === "promenade" && styles.boxActive}
             boxStyleText={
               serviceTypeCheck === "promenade" && styles.boxActiveText
@@ -173,7 +182,7 @@ export default function Form1() {
           />
           <BoxInputSelect
             text="sortie"
-            media={require("../../../assets/media/picto/sortie.png")}
+            media={serviceTypeCheck === "sortie" ? require("../../../assets/media/picto/sortieWhite.png") : require("../../../assets/media/picto/sortie.png")}
             boxStyle={serviceTypeCheck === "sortie" && styles.boxActive}
             boxStyleText={serviceTypeCheck === "sortie" && styles.boxActiveText}
             onPress={() => onButtonServicePress("sortie")}
@@ -192,7 +201,9 @@ export default function Form1() {
           onPress={onPressBtn}
         />
       </View>
-      {/* // TODO Add and connect page info blob */}
+      <View style={styles.blobBox}>
+      <Image style={styles.blob} source={require("../../../assets/media/picto/blob/blob1_5.png")} resizeMode="contain"/>
+      </View>
     </View>
   );
 }

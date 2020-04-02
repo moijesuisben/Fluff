@@ -1,5 +1,5 @@
 import React from "react";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, Image } from "react-native";
 import * as variables from "../../variables";
 import InputHeading from "../../components/Text/InputHeading";
 import InputText from "../../components/Input/InputText";
@@ -33,6 +33,15 @@ const styles = StyleSheet.create({
   },
   nextButtonEnable: {
     color: variables.peachOrange
+  },
+  blobBox: {
+    alignItems: "center",
+    marginTop: variables.marginRoot
+  },
+  blob: {
+    alignItems: "center",
+    height: 30,
+    width: 210
   }
 });
 
@@ -92,6 +101,13 @@ export default function Form2() {
           text="suivant"
           onPress={onPressBtn}
           TextStyle={textInput !== "" && styles.nextButtonEnable}
+        />
+      </View>
+      <View style={styles.blobBox}>
+        <Image
+          style={styles.blob}
+          source={require("../../../assets/media/picto/blob/blob2_5.png")}
+          resizeMode="contain"
         />
       </View>
     </View>
