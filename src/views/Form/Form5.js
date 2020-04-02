@@ -68,12 +68,12 @@ export default function Form5() {
           <Text style={styles.textVariable}>10km</Text>
           &nbsp;du&nbsp;
           <Text style={styles.textVariable}>
-            11 boulevard de Longchamp, 44300 Nantes
+            11 rue de Nantes
           </Text>
           &nbsp;du&nbsp;
-          <Text style={styles.textVariable}>mardi 6 février</Text>
+          <Text style={styles.textVariable}>lundi 13 avril</Text>
           &nbsp;au&nbsp;
-          <Text style={styles.textVariable}>samedi 10 février</Text>
+          <Text style={styles.textVariable}>jeudi 16 avril</Text>
         </Text>
       </View>
       <PrimaryBtn
