@@ -19,6 +19,7 @@ import Result from "./src/views/Result";
 import ProfileAbout from "./src/views/Profile/ProfileAbout";
 import ProfileCare from "./src/views/Profile/ProfileCare";
 import ProfileMedia from "./src/views/Profile/ProfileMedia";
+import ProfileGallery from "./src/views/Profile/ProfileGallery";
 import ProfileRate from "./src/views/Profile/ProfileScore";
 
 import CustomTabBar from "./src/components/TabBar/CustomTabBar";
@@ -187,6 +188,18 @@ export default function App() {
           <Scene
             key="profileMedia"
             component={ProfileMedia}
+            navigationBarStyle={styles.headerProfile}
+            renderTitle={
+              <HeaderProfile lineSelected={{ left: 330, width: 70 }} />
+            }
+            backTitle=" "
+            backButtonTintColor={variables.hitGray}
+            gesturesEnabled={false}
+            tabBarComponent={CustomTabBarProfile}
+          />
+          <Scene
+            key="profileGallery"
+            component={ProfileGallery}
             navigationBarStyle={styles.headerProfile}
             renderTitle={
               <HeaderProfile lineSelected={{ left: 330, width: 70 }} />

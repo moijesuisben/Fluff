@@ -15,9 +15,6 @@ const styles = StyleSheet.create({
     // shadowRadius: 1,
     // elevation: 1,
   },
-  press: {
-    color: "red"
-  }
 });
 
 export default function CustomCalendar() {
