@@ -122,7 +122,7 @@ export default function Form1() {
         <View flexDirection="row">
           <BoxInputSelect
             text="hébergement"
-            media={require("../../../assets/logo/icon.png")}
+            media={require("../../../assets/media/picto/hebergement.png")}
             boxStyle={serviceTypeCheck === "hébergement" && styles.boxActive}
             boxStyleText={
               serviceTypeCheck === "hébergement" && styles.boxActiveText
@@ -131,7 +131,7 @@ export default function Form1() {
           />
           <BoxInputSelect
             text="garde à domicile"
-            media={require("../../../assets/logo/icon.png")}
+            media={require("../../../assets/media/picto/gardeADomicile.png")}
             boxStyle={
               serviceTypeCheck === "garde à domicile" && styles.boxActive
             }
@@ -142,7 +142,7 @@ export default function Form1() {
           />
           <BoxInputSelect
             text="visite à domicile"
-            media={require("../../../assets/logo/icon.png")}
+            media={require("../../../assets/media/picto/visite.png")}
             boxStyle={
               serviceTypeCheck === "visite à domicile" && styles.boxActive
             }
@@ -155,7 +155,7 @@ export default function Form1() {
         <View flexDirection="row">
           <BoxInputSelect
             text="garderie"
-            media={require("../../../assets/logo/icon.png")}
+            media={require("../../../assets/media/picto/garderie.png")}
             boxStyle={serviceTypeCheck === "garderie" && styles.boxActive}
             boxStyleText={
               serviceTypeCheck === "garderie" && styles.boxActiveText
@@ -164,7 +164,7 @@ export default function Form1() {
           />
           <BoxInputSelect
             text="promenade"
-            media={require("../../../assets/logo/icon.png")}
+            media={require("../../../assets/media/picto/promenade.png")}
             boxStyle={serviceTypeCheck === "promenade" && styles.boxActive}
             boxStyleText={
               serviceTypeCheck === "promenade" && styles.boxActiveText
@@ -173,7 +173,7 @@ export default function Form1() {
           />
           <BoxInputSelect
             text="sortie"
-            media={require("../../../assets/logo/icon.png")}
+            media={require("../../../assets/media/picto/sortie.png")}
             boxStyle={serviceTypeCheck === "sortie" && styles.boxActive}
             boxStyleText={serviceTypeCheck === "sortie" && styles.boxActiveText}
             onPress={() => onButtonServicePress("sortie")}

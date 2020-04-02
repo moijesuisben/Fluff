@@ -37,7 +37,7 @@ export default function BoxInputSelect({ text, media, onPress, boxStyle, boxStyl
     <View style={styles.container}>
       <TouchableHighlight onPress={onPress}>
         <View style={[styles.box, boxStyle]}>
-          <Image style={styles.icon} source={media} />
+          <Image style={styles.icon} source={media} resizeMode="contain"/>
           <Text style={[styles.text, boxStyleText]}>{text}</Text>
         </View>
       </TouchableHighlight>
